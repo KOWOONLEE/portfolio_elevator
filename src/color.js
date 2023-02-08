@@ -1,4 +1,4 @@
 export const theme = {
   bg: "",
-  grey: "#3A3D40",
+  grey: "#b3a7a7",
 };

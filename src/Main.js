@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Nav from "./components/Nav";
+import { theme } from "./color";
 
 const Main = () => {
   return (
@@ -13,12 +15,7 @@ const Main = () => {
             </div>
           </div>
           <div className="eleBtn">
-            <ul>
-              <li>Portfolio</li>
-              <li>Resume</li>
-              <li>Skills</li>
-              <li>About</li>
-            </ul>
+            <Nav />
           </div>
         </div>
       </StyledMain>
@@ -46,7 +43,7 @@ const StyledMain = styled.div`
     display: flex;
     width: 45%;
     height: 90%;
-    background-color: #b3a7a7;
+    background-color: ${theme.grey};
     align-items: flex-end;
     justify-content: center;
   }
@@ -74,9 +71,11 @@ const StyledMain = styled.div`
     border: 1px solid grey;
   }
   .eleBtn {
+    display: flex;
     width: 13%;
-    height: 40%;
-    background-color: #b3a7a7;
+    height: 43%;
+    background-color: ${theme.grey};
     margin-left: 3%;
+    text-decoration: none;
   }
 `;
