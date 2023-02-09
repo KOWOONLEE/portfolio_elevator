@@ -4,7 +4,10 @@ import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 import { theme } from "../color";
 
-const Nav = () => {
+const Nav = ({ eleActive, setEleActive }) => {
+  const handleClick = () => {
+    setEleActive(!eleActive);
+  };
   return (
     <>
       <StyledNav>
@@ -41,7 +44,7 @@ const Nav = () => {
           </div>
         </Link>
         <div className="upDownBtn">
-          <i className="icon">
+          <i className="icon" onClick={handleClick}>
             <FaArrowAltCircleUp />
           </i>
           <i className="icon">

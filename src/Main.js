@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Nav from "./components/Nav";
 import { theme } from "./color";
+import { useState } from "react";
 
 const Main = () => {
+  const [eleActive, setEleActive] = useState(false);
+
   return (
     <>
       <StyledMain>
@@ -10,12 +13,16 @@ const Main = () => {
           <div className="elevator">
             <div className="eleDisplay"></div>
             <div className="eleDoor">
-              <div className="eleDoorLeft"></div>
-              <div className="eleDoorRight"></div>
+              <div
+                className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
+              ></div>
+              <div
+                className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}
+              ></div>
             </div>
           </div>
           <div className="eleBtn">
-            <Nav />
+            <Nav eleActive={eleActive} setEleActive={setEleActive} />
           </div>
         </div>
       </StyledMain>
@@ -64,11 +71,51 @@ const StyledMain = styled.div`
     width: 50%;
     background-color: #d9d3d3;
     border: 1px solid grey;
+    animation: fadeInLeft 3s;
+
+    @keyframes fadeInLeft {
+      0% {
+        width: 0;
+      }
+      to {
+        width: 50%;
+      }
+    }
   }
+  .eleDoorLeftActive {
+    /* animation: overInLeft 3s;
+
+    @keyframes overInLeft {
+      0% {
+       
+        opacity: 1;
+        transform: translateZ(0);
+      }
+      to {
+      
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+      }
+    } */
+  }
+
   .eleDoorRight {
     width: 50%;
     background-color: #d9d3d3;
     border: 1px solid grey;
+    /* animation: fadeInRight 3s;
+
+    @keyframes fadeInRight {
+      0% {
+        width: 0%;
+      }
+      to {
+        width: 50%;
+      }
+    } */
+  }
+
+  .eleDoorRightActive {
   }
   .eleBtn {
     display: flex;
