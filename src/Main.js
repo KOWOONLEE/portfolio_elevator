@@ -68,8 +68,10 @@ const StyledMain = styled.div`
     background-color: white;
   }
   .eleDoorLeft {
-    width: 50%;
-    background-color: #d9d3d3;
+    position: absolute;
+    width: 19%;
+    height: 81%;
+    background-color: pink;
     border: 1px solid grey;
     animation: fadeInLeft 3s;
 
@@ -77,42 +79,37 @@ const StyledMain = styled.div`
       0% {
         width: 0;
       }
-      to {
+      50% {
         width: 50%;
+      }
+      100% {
+        width: 0%;
       }
     }
   }
   .eleDoorLeftActive {
-    /* animation: overInLeft 3s;
-
-    @keyframes overInLeft {
-      0% {
-       
-        opacity: 1;
-        transform: translateZ(0);
-      }
-      to {
-      
-        opacity: 0;
-        transform: translate3d(-100%, 0, 0);
-      }
-    } */
   }
 
   .eleDoorRight {
-    width: 50%;
+    position: absolute;
+    right: 10px;
+    width: 19%;
+    height: 81%;
     background-color: #d9d3d3;
     border: 1px solid grey;
-    /* animation: fadeInRight 3s;
+    animation: fadeInRight 3s;
 
     @keyframes fadeInRight {
       0% {
-        width: 0%;
+        width: 0;
       }
-      to {
+      50% {
         width: 50%;
       }
-    } */
+      100% {
+        width: 0%;
+      }
+    }
   }
 
   .eleDoorRightActive {
