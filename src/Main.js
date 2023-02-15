@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Main = () => {
   const [eleActive, setEleActive] = useState(false);
+  console.log(eleActive);
 
   return (
     <>
@@ -51,6 +52,7 @@ const StyledMain = styled.div`
     width: 45%;
     height: 90%;
     background-color: ${theme.grey};
+    border: 2px solid grey;
     align-items: flex-end;
     justify-content: center;
   }
@@ -70,55 +72,81 @@ const StyledMain = styled.div`
   .eleDoorLeft {
     position: absolute;
     width: 19%;
-    height: 81%;
-    background-color: pink;
+    height: 80.7%;
+    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
     border: 1px solid grey;
     animation: fadeInLeft 3s;
 
     @keyframes fadeInLeft {
       0% {
-        width: 0;
-      }
-      50% {
-        width: 50%;
+        width: 3%;
       }
       100% {
-        width: 0%;
+        width: 19%;
       }
     }
   }
   .eleDoorLeftActive {
+    position: absolute;
+    width: 3%;
+    height: 80.7%;
+    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
+    border: 1px solid grey;
+    animation: openInLeft 3s;
+
+    @keyframes openInLeft {
+      0% {
+        width: 19%;
+      }
+      100% {
+        width: 3%;
+      }
+    }
   }
 
   .eleDoorRight {
     position: absolute;
-    right: 10px;
+    right: 38.8%;
     width: 19%;
-    height: 81%;
-    background-color: #d9d3d3;
+    height: 80.7%;
+    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
     border: 1px solid grey;
     animation: fadeInRight 3s;
 
     @keyframes fadeInRight {
       0% {
-        width: 0;
-      }
-      50% {
-        width: 50%;
+        width: 3%;
       }
       100% {
-        width: 0%;
+        width: 19%;
       }
     }
   }
 
   .eleDoorRightActive {
+    position: absolute;
+    right: 38.8%;
+    width: 3%;
+    height: 80.7%;
+    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
+    border: 1px solid grey;
+    animation: openInRight 3s;
+
+    @keyframes openInRight {
+      0% {
+        width: 19%;
+      }
+      100% {
+        width: 3%;
+      }
+    }
   }
   .eleBtn {
     display: flex;
     width: 13%;
     height: 43%;
     background-color: ${theme.grey};
+    border: 2px solid grey;
     margin-left: 3%;
     text-decoration: none;
   }
