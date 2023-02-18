@@ -3,16 +3,20 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 import { theme } from "../color";
+import { useState } from "react";
 
-const Nav = ({ eleActive, setEleActive }) => {
+const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
   const handleClick = () => {
     setEleActive(!eleActive);
+  };
+  const floorClick = (e) => {
+    setScreen(e.target.textContent);
   };
   return (
     <>
       <StyledNav>
         <Link to="">
-          <div className="floorBtn">
+          <div className="floorBtn" onClick={floorClick}>
             <span className="numberBtn">
               <span className="number">4</span>
             </span>
@@ -20,7 +24,7 @@ const Nav = ({ eleActive, setEleActive }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn">
+          <div className="floorBtn" onClick={floorClick}>
             <span className="numberBtn">
               <span className="number">3</span>
             </span>
@@ -28,7 +32,7 @@ const Nav = ({ eleActive, setEleActive }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn">
+          <div className="floorBtn" onClick={floorClick}>
             <span className="numberBtn">
               <span className="number">2</span>
             </span>
@@ -36,7 +40,7 @@ const Nav = ({ eleActive, setEleActive }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn">
+          <div className="floorBtn" onClick={floorClick}>
             <span className="numberBtn">
               <span className="number">1</span>
             </span>

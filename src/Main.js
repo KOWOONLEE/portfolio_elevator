@@ -5,14 +5,16 @@ import { useState } from "react";
 
 const Main = () => {
   const [eleActive, setEleActive] = useState(false);
-  console.log(eleActive);
+  const [screen, setScreen] = useState("");
 
   return (
     <>
       <StyledMain>
         <div className="eleWrap">
           <div className="elevator">
-            <div className="eleDisplay"></div>
+            <div className="eleDisplay">
+              <div className="displayWord">{screen}</div>
+            </div>
             <div className="eleDoor">
               <div
                 className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
@@ -23,7 +25,12 @@ const Main = () => {
             </div>
           </div>
           <div className="eleBtn">
-            <Nav eleActive={eleActive} setEleActive={setEleActive} />
+            <Nav
+              eleActive={eleActive}
+              setEleActive={setEleActive}
+              screen={screen}
+              setScreen={setScreen}
+            />
           </div>
         </div>
       </StyledMain>
@@ -46,6 +53,20 @@ const StyledMain = styled.div`
     height: 100vh;
     align-items: center;
     justify-content: center;
+    /* animation-duration: 0.5s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @keyframes slidein {
+      from {
+        margin-left: 1%;
+      }
+
+      to {
+        margin-left: -1%;
+      }
+    } */
   }
   .elevator {
     display: flex;
@@ -149,5 +170,8 @@ const StyledMain = styled.div`
     border: 2px solid grey;
     margin-left: 3%;
     text-decoration: none;
+  }
+  .displayWord {
+    color: white;
   }
 `;
