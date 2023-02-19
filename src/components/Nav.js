@@ -4,19 +4,22 @@ import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 import { theme } from "../color";
 import { useState } from "react";
+import { useRef } from "react";
 
 const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
   const handleClick = () => {
     setEleActive(!eleActive);
   };
   const floorClick = (e) => {
-    setScreen(e.target.textContent);
+    setScreen(e.target.value);
   };
+  const nameRef = useRef();
+
   return (
     <>
       <StyledNav>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick}>
+          <div className="floorBtn" onClick={floorClick} ref={nameRef}>
             <span className="numberBtn">
               <span className="number">4</span>
             </span>
@@ -24,7 +27,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick}>
+          <div className="floorBtn" onClick={floorClick} value="Resume">
             <span className="numberBtn">
               <span className="number">3</span>
             </span>
@@ -32,7 +35,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick}>
+          <div className="floorBtn" onClick={floorClick} value="Skills">
             <span className="numberBtn">
               <span className="number">2</span>
             </span>
@@ -40,7 +43,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick}>
+          <div className="floorBtn" onClick={floorClick} value="About">
             <span className="numberBtn">
               <span className="number">1</span>
             </span>
