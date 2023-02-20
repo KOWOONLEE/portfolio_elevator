@@ -13,7 +13,9 @@ const Main = () => {
         <div className="eleWrap">
           <div className="elevator">
             <div className="eleDisplay">
-              <div className="displayWord">{screen}</div>
+              <div className="displayWord">
+                <p className="word">{screen}</p>
+              </div>
             </div>
             <div className="eleDoor">
               <div
@@ -78,7 +80,10 @@ const StyledMain = styled.div`
     justify-content: center;
   }
   .eleDisplay {
+    display: flex;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: 7vh;
     width: 20%;
     height: 50px;
@@ -172,6 +177,59 @@ const StyledMain = styled.div`
     text-decoration: none;
   }
   .displayWord {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     color: white;
+    font-size: 1.4em;
+    overflow: hidden;
+    /* position: relative; */
+    background: black;
+    border: 1px solid #4a4a4a;
+  }
+  .word {
+    color: white;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 5s linear infinite;
+    -webkit-animation: scroll-left 5s linear infinite;
+    animation: scroll-left 5s linear infinite;
+
+    @-moz-keyframes scroll-left {
+      0% {
+        -moz-transform: translateX(80%);
+      }
+      100% {
+        -moz-transform: translateX(-80%);
+      }
+    }
+    @-webkit-keyframes scroll-left {
+      0% {
+        -webkit-transform: translateX(80%);
+      }
+      100% {
+        -webkit-transform: translateX(-80%);
+      }
+    }
+    @keyframes scroll-left {
+      0% {
+        -moz-transform: translateX(80%);
+        -webkit-transform: translateX(80%);
+        transform: translateX(80%);
+      }
+      100% {
+        -moz-transform: translateX(-80%);
+        -webkit-transform: translateX(-80%);
+        transform: translateX(-80%);
+      }
+    }
   }
 `;

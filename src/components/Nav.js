@@ -11,7 +11,8 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
     setEleActive(!eleActive);
   };
   const floorClick = (e) => {
-    setScreen(e.target.value);
+    setScreen(e.target.textContent);
+    console.log(e.target.textContent);
   };
   const nameRef = useRef();
 
@@ -19,35 +20,43 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
     <>
       <StyledNav>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick} ref={nameRef}>
+          <div className="floorBtn" ref={nameRef}>
             <span className="numberBtn">
               <span className="number">4</span>
             </span>
-            <span className="btnDetail"> Portfolio</span>
+            <span className="btnDetail" onClick={floorClick}>
+              Portfolio
+            </span>
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick} value="Resume">
+          <div className="floorBtn" value="Resume">
             <span className="numberBtn">
               <span className="number">3</span>
             </span>
-            <span className="btnDetail"> Resume</span>
+            <span className="btnDetail" onClick={floorClick}>
+              Resume
+            </span>
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick} value="Skills">
+          <div className="floorBtn" value="Skills">
             <span className="numberBtn">
               <span className="number">2</span>
             </span>
-            <span className="btnDetail"> Skills</span>
+            <span className="btnDetail" onClick={floorClick}>
+              Skills
+            </span>
           </div>
         </Link>
         <Link to="">
-          <div className="floorBtn" onClick={floorClick} value="About">
+          <div className="floorBtn" value="About">
             <span className="numberBtn">
               <span className="number">1</span>
             </span>
-            <span className="btnDetail"> About</span>
+            <span className="btnDetail" onClick={floorClick}>
+              About
+            </span>
           </div>
         </Link>
         <div className="upDownBtn">
