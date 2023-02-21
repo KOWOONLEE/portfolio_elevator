@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Nav from "./components/Nav";
 import { theme } from "./color";
 import { useState } from "react";
+import SpaceImg from "./assets/images/space.jpg";
 
 const Main = () => {
   const [eleActive, setEleActive] = useState(false);
@@ -18,6 +19,7 @@ const Main = () => {
               </div>
             </div>
             <div className="eleDoor">
+              <img className="inlineImg" alt="inlineImg" src={SpaceImg} />
               <div
                 className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
               ></div>
@@ -84,7 +86,7 @@ const StyledMain = styled.div`
     position: absolute;
     justify-content: center;
     align-items: center;
-    top: 7vh;
+    top: 6.5vh;
     width: 20%;
     height: 50px;
     background-color: black;
@@ -93,7 +95,12 @@ const StyledMain = styled.div`
     display: flex;
     width: 85%;
     height: 90%;
-    background-color: white;
+  }
+  .inlineImg {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .eleDoorLeft {
     position: absolute;
