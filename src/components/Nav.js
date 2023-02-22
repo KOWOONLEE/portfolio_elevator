@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
+import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
 import { theme } from "../color";
 import { useState } from "react";
 import { useRef } from "react";
@@ -49,7 +50,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
             </span>
           </div>
         </Link>
-        <Link to="">
+        <Link to="/space">
           <div className="floorBtn" value="About">
             <span className="numberBtn">
               <span className="number">1</span>
@@ -61,10 +62,10 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
         </Link>
         <div className="upDownBtn">
           <i className="icon" onClick={handleClick}>
-            <FaArrowAltCircleUp />
+            <BsArrowsExpand />
           </i>
           <i className="icon">
-            <FaArrowAltCircleDown />
+            <BsArrowsCollapse />
           </i>
         </div>
       </StyledNav>
@@ -118,18 +119,20 @@ const StyledNav = styled.div`
     margin-left: 10px;
   }
   .upDownBtn {
-    display: inline-block;
+    display: flex;
     width: 100%;
     text-align: center;
     vertical-align: center;
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 20px;
   }
   svg {
-    width: 33px;
-    height: 33px;
-    fill: #d9d3d3;
+    width: 30px;
+    height: 30px;
+    fill: pink;
     border: 1px solid grey;
     border-radius: 50%;
+    padding: 5px;
   }
   .svg:hover {
   }
@@ -137,8 +140,15 @@ const StyledNav = styled.div`
     display: block;
     size: 1.1em;
     padding: 3px;
+    transform: rotate(90deg);
+    margin-right: 10px;
+    margin-left: 10px;
 
     svg:hover {
+      cursor: pointer;
+      fill: #12cc7e;
+    }
+    svg:focus {
       cursor: pointer;
       fill: pink;
     }

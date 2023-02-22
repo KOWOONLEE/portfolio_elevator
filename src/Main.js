@@ -4,9 +4,8 @@ import { theme } from "./color";
 import { useState } from "react";
 import SpaceImg from "./assets/images/space.jpg";
 
-const Main = () => {
+const Main = ({ screen, setScreen }) => {
   const [eleActive, setEleActive] = useState(false);
-  const [screen, setScreen] = useState("");
 
   return (
     <>
@@ -102,6 +101,20 @@ const StyledMain = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  /* .inlineImg:hover {
+    animation: expandImg 2s;
+
+    @keyframes expandImg {
+      0% {
+        width: 100%;
+        height: 100%;
+      }
+      100% {
+        z-index: 9999;
+        transform: scale(3, 2);
+      }
+    }
+  } */
   .eleDoorLeft {
     position: absolute;
     width: 19%;
@@ -177,7 +190,7 @@ const StyledMain = styled.div`
   .eleBtn {
     display: flex;
     width: 13%;
-    height: 43%;
+    height: 45%;
     background-color: ${theme.grey};
     border: 2px solid grey;
     margin-left: 3%;
