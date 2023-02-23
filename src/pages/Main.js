@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import { theme } from "../color";
 import { useEffect, useState } from "react";
 import SpaceImg from "../assets/images/space.jpg";
-import { TbNorthStar } from "react-icons/tb";
+import { BsStars } from "react-icons/bs";
 
 const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -11,11 +11,13 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
 
   //처음 렌더링에서는 페이지 소개
   //층 버튼을 누르면 해당 층수 screen
+  //3초 뒤에 문 열리면서
+  // 다른 페이지 이동
 
   useEffect(() => {
     const screenDisplay = (e) => {
       if (!eleActive) {
-        setScreen("환영합니다. 보고 싶은 내용을 클릭해 주세요 😃");
+        setScreen("환영합니다. 보고 싶은 포폴 내용을 클릭해 주세요 😃");
       }
     };
     screenDisplay();
@@ -33,7 +35,7 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
             </div>
             <div className="eleDoor">
               <div className={eleShake ? "starActive" : "star"}>
-                <TbNorthStar />
+                <BsStars />
               </div>
               <img className="inlineImg" alt="inlineImg" src={SpaceImg} />
               <div
@@ -67,7 +69,7 @@ const StyledMain = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: #ddd7d7;
+  background-color: ${theme.bg};
   align-items: center;
   justify-content: center;
 
@@ -83,10 +85,11 @@ const StyledMain = styled.div`
     display: flex;
     width: 45%;
     height: 90%;
-    background-color: ${theme.grey};
-    border: 2px solid grey;
+    background-color: ${theme.doorSide};
+    border: 3px solid ${theme.border};
     align-items: flex-end;
     justify-content: center;
+    font-weight: 600;
   }
   .eleDisplay {
     display: flex;
@@ -98,7 +101,7 @@ const StyledMain = styled.div`
     align-items: center;
     text-transform: uppercase;
     background-color: black;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
   }
   .eleDoor {
     display: flex;
@@ -118,7 +121,7 @@ const StyledMain = styled.div`
     width: 30px;
     height: 30px;
     background: transparent;
-    box-shadow: 180px 300px yellow;
+    /* box-shadow: 180px 300px yellow; */
     animation: animStar 1s linear infinite;
     &:after {
       content: " ";
@@ -144,7 +147,7 @@ const StyledMain = styled.div`
       height: 25px;
       top: 35vh;
       left: 12vw;
-      stroke: white;
+      fill: white;
     }
   }
   .starActive {
@@ -181,8 +184,8 @@ const StyledMain = styled.div`
       height: 25px;
       top: 35vh;
       left: 12vw;
-      stroke: white;
-      animation: biggerStar 3s linear infinite;
+      fill: white;
+      animation: biggerStar 5s linear infinite;
 
       @keyframes biggerStar {
         from {
@@ -193,10 +196,10 @@ const StyledMain = styled.div`
         }
 
         to {
-          width: 70px;
-          height: 70px;
+          width: 60px;
+          height: 60px;
           top: 33vh;
-          left: 10vw;
+          left: 11vw;
         }
       }
     }
@@ -205,8 +208,8 @@ const StyledMain = styled.div`
     position: absolute;
     width: 19%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
-    border: 1px solid grey;
+    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    border: 1px solid ${theme.border};
     animation: fadeInLeft 3s;
 
     @keyframes fadeInLeft {
@@ -222,8 +225,8 @@ const StyledMain = styled.div`
     position: absolute;
     width: 4%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
-    border: 1px solid grey;
+    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    border: 1px solid ${theme.border};
     animation: openInLeft 3s;
 
     @keyframes openInLeft {
@@ -241,8 +244,8 @@ const StyledMain = styled.div`
     right: 39%;
     width: 19%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
-    border: 1px solid grey;
+    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    border: 1px solid ${theme.border};
     animation: fadeInRight 3s;
 
     @keyframes fadeInRight {
@@ -260,8 +263,8 @@ const StyledMain = styled.div`
     right: 39%;
     width: 4%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
-    border: 1px solid grey;
+    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    border: 1px solid ${theme.border};
     animation: openInRight 3s;
 
     @keyframes openInRight {
@@ -278,7 +281,7 @@ const StyledMain = styled.div`
     width: 13%;
     height: 45%;
     background-color: ${theme.grey};
-    border: 2px solid grey;
+    border: 2px solid ${theme.border};
     margin-left: 3%;
     text-decoration: none;
   }

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { theme } from "./../color";
 import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
-import { theme } from "../color";
 import { useState } from "react";
 import { useRef } from "react";
 
@@ -123,7 +123,7 @@ const StyledNav = styled.div`
   .floorBtn {
     display: flex;
     height: 4vh;
-    background-color: pink;
+    background-color: ${theme.doorSide};
     align-items: center;
     padding: 10px 10px 10px 20px;
   }
@@ -135,7 +135,7 @@ const StyledNav = styled.div`
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
-    border: 1px double grey;
+    border: 1px double ${theme.border};
     border-radius: 50%;
     justify-content: center;
     align-items: center;

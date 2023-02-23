@@ -3,10 +3,10 @@
 }
 /* Mount & UnMount Effect Animations */
 .loaded {
-  animation: 3s ease load forwards;
+  animation: 2s ease load forwards;
 }
 .unloaded {
-  animation: 3s ease unload forwards;
+  animation: 2s ease unload forwards;
 }
 @keyframes load {
   0% {
