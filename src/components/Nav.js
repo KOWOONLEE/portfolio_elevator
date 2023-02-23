@@ -24,9 +24,10 @@ const Nav = ({
     e.preventDefault();
     setScreen(e.target.textContent);
     setEleShake(true);
+    console.log(eleShake);
     setTimeout(() => {
       setEleActive(true);
-    }, 5500);
+    }, 3000);
   };
   const nameRef = useRef();
 
@@ -162,8 +163,7 @@ const StyledNav = styled.div`
     border-radius: 50%;
     padding: 5px;
   }
-  .svg:hover {
-  }
+
   .icon {
     display: block;
     size: 1.1em;

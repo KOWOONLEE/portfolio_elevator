@@ -1,12 +1,25 @@
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import { theme } from "../color";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SpaceImg from "../assets/images/space.jpg";
+import { TbNorthStar } from "react-icons/tb";
 
 const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
   const [eleShake, setEleShake] = useState(false);
+
+  //처음 렌더링에서는 페이지 소개
+  //층 버튼을 누르면 해당 층수 screen
+
+  useEffect(() => {
+    const screenDisplay = (e) => {
+      if (!eleActive) {
+        setScreen("환영합니다. 보고 싶은 내용을 클릭해 주세요 😃");
+      }
+    };
+    screenDisplay();
+  }, []);
 
   return (
     <>
@@ -19,6 +32,9 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
               </div>
             </div>
             <div className="eleDoor">
+              <div className={eleShake ? "starActive" : "star"}>
+                <TbNorthStar />
+              </div>
               <img className="inlineImg" alt="inlineImg" src={SpaceImg} />
               <div
                 className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
@@ -95,20 +111,96 @@ const StyledMain = styled.div`
     height: 100%;
     object-fit: cover;
   }
-  /* .inlineImg:hover {
-    animation: expandImg 2s;
 
-    @keyframes expandImg {
-      0% {
-        width: 100%;
-        height: 100%;
+  .star {
+    position: relative;
+    float: inline-start;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    box-shadow: 180px 300px yellow;
+    animation: animStar 1s linear infinite;
+    &:after {
+      content: " ";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+    }
+
+    @keyframes animStar {
+      from {
+        transform: translateX(100px);
       }
-      100% {
-        z-index: 9999;
-        transform: scale(3, 2);
+
+      to {
+        transform: translateX(100px);
+        opacity: 0;
       }
     }
-  } */
+    svg {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 35vh;
+      left: 12vw;
+      stroke: white;
+    }
+  }
+  .starActive {
+    position: relative;
+    float: inline-start;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    box-shadow: 180px 300px yellow;
+    animation: animStar 1s linear infinite;
+    &:after {
+      content: " ";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+    }
+
+    @keyframes animStar {
+      from {
+        transform: translateX(100px);
+      }
+
+      to {
+        transform: translateX(100px);
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    svg {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 35vh;
+      left: 12vw;
+      stroke: white;
+      animation: biggerStar 3s linear infinite;
+
+      @keyframes biggerStar {
+        from {
+          width: 25px;
+          height: 25px;
+          top: 35vh;
+          left: 12vw;
+        }
+
+        to {
+          width: 70px;
+          height: 70px;
+          top: 33vh;
+          left: 10vw;
+        }
+      }
+    }
+  }
   .eleDoorLeft {
     position: absolute;
     width: 19%;
@@ -210,6 +302,7 @@ const StyledMain = styled.div`
     text-align: center;
     margin: 0;
     padding: 10px;
+    white-space: nowrap;
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
@@ -219,30 +312,30 @@ const StyledMain = styled.div`
 
     @-moz-keyframes scroll-left {
       0% {
-        -moz-transform: translateX(80%);
+        -moz-transform: translateX(100%);
       }
       100% {
-        -moz-transform: translateX(-80%);
+        -moz-transform: translateX(-100%);
       }
     }
     @-webkit-keyframes scroll-left {
       0% {
-        -webkit-transform: translateX(80%);
+        -webkit-transform: translateX(100%);
       }
       100% {
-        -webkit-transform: translateX(-80%);
+        -webkit-transform: translateX(-100%);
       }
     }
     @keyframes scroll-left {
       0% {
-        -moz-transform: translateX(80%);
-        -webkit-transform: translateX(80%);
-        transform: translateX(80%);
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
       }
       100% {
-        -moz-transform: translateX(-80%);
-        -webkit-transform: translateX(-80%);
-        transform: translateX(-80%);
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
       }
     }
   }
