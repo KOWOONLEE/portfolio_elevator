@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Nav from "./components/Nav";
-import { theme } from "./color";
+import Nav from "../components/Nav";
+import { theme } from "../color";
 import { useState } from "react";
-import SpaceImg from "./assets/images/space.jpg";
+import SpaceImg from "../assets/images/space.jpg";
 
-const Main = ({ screen, setScreen }) => {
+const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
+  const [eleShake, setEleShake] = useState(false);
 
   return (
     <>
@@ -33,6 +34,10 @@ const Main = ({ screen, setScreen }) => {
               setEleActive={setEleActive}
               screen={screen}
               setScreen={setScreen}
+              pages={pages}
+              movePage={movePage}
+              eleShake={eleShake}
+              setEleShake={setEleShake}
             />
           </div>
         </div>
@@ -56,21 +61,8 @@ const StyledMain = styled.div`
     height: 100vh;
     align-items: center;
     justify-content: center;
-    /* animation-duration: 0.5s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-    @keyframes slidein {
-      from {
-        margin-left: 1%;
-      }
-
-      to {
-        margin-left: -1%;
-      }
-    } */
   }
+
   .elevator {
     display: flex;
     width: 45%;
@@ -83,12 +75,14 @@ const StyledMain = styled.div`
   .eleDisplay {
     display: flex;
     position: absolute;
-    justify-content: center;
-    align-items: center;
     top: 6.5vh;
     width: 20%;
     height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
     background-color: black;
+    letter-spacing: 5px;
   }
   .eleDoor {
     display: flex;
@@ -125,7 +119,7 @@ const StyledMain = styled.div`
 
     @keyframes fadeInLeft {
       0% {
-        width: 3%;
+        width: 4%;
       }
       100% {
         width: 19%;
@@ -134,7 +128,7 @@ const StyledMain = styled.div`
   }
   .eleDoorLeftActive {
     position: absolute;
-    width: 3%;
+    width: 4%;
     height: 80.7%;
     background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
     border: 1px solid grey;
@@ -145,14 +139,14 @@ const StyledMain = styled.div`
         width: 19%;
       }
       100% {
-        width: 3%;
+        width: 4%;
       }
     }
   }
 
   .eleDoorRight {
     position: absolute;
-    right: 38.8%;
+    right: 39%;
     width: 19%;
     height: 80.7%;
     background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
@@ -161,7 +155,7 @@ const StyledMain = styled.div`
 
     @keyframes fadeInRight {
       0% {
-        width: 3%;
+        width: 4%;
       }
       100% {
         width: 19%;
@@ -171,8 +165,8 @@ const StyledMain = styled.div`
 
   .eleDoorRightActive {
     position: absolute;
-    right: 38.8%;
-    width: 3%;
+    right: 39%;
+    width: 4%;
     height: 80.7%;
     background-image: linear-gradient(to bottom, #434343, lightgrey, #434343);
     border: 1px solid grey;
@@ -183,7 +177,7 @@ const StyledMain = styled.div`
         width: 19%;
       }
       100% {
-        width: 3%;
+        width: 4%;
       }
     }
   }

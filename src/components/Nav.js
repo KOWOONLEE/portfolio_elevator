@@ -7,20 +7,48 @@ import { theme } from "../color";
 import { useState } from "react";
 import { useRef } from "react";
 
-const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
+const Nav = ({
+  eleActive,
+  setEleActive,
+  screen,
+  setScreen,
+  pages,
+  movePage,
+  eleShake,
+  setEleShake,
+}) => {
   const handleClick = () => {
     setEleActive(!eleActive);
   };
   const floorClick = (e) => {
+    e.preventDefault();
     setScreen(e.target.textContent);
-    console.log(e.target.textContent);
+    setEleShake(true);
+    setTimeout(() => {
+      setEleActive(true);
+    }, 5500);
   };
   const nameRef = useRef();
 
   return (
     <>
       <StyledNav>
-        <Link to="">
+        {/* <nav>
+          <ul className="nav">
+            {pages.map((m, idx) => (
+              <li key={m.title + idx}>
+                <button
+                  onClick={() => {
+                    movePage(m.link);
+                  }}
+                >
+                  {m.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav> */}
+        <Link to="/portfolio">
           <div className="floorBtn" ref={nameRef}>
             <span className="numberBtn">
               <span className="number">4</span>
@@ -30,7 +58,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
             </span>
           </div>
         </Link>
-        <Link to="">
+        <Link to="/resume">
           <div className="floorBtn" value="Resume">
             <span className="numberBtn">
               <span className="number">3</span>
@@ -40,7 +68,7 @@ const Nav = ({ eleActive, setEleActive, screen, setScreen }) => {
             </span>
           </div>
         </Link>
-        <Link to="">
+        <Link to="/space">
           <div className="floorBtn" value="Skills">
             <span className="numberBtn">
               <span className="number">2</span>
@@ -152,5 +180,77 @@ const StyledNav = styled.div`
       cursor: pointer;
       fill: pink;
     }
+  }
+  .loaded {
+    animation: 1s ease load forwards;
+  }
+  .unloaded {
+    animation: 1s ease unload forwards;
+  }
+  @keyframes load {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes unload {
+    0% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  .wrap {
+    opacity: 0;
+  }
+
+  .about,
+  .skills,
+  .resume,
+  .prtfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    font-size: 2rem;
+  }
+
+  .about {
+    background: rgb(86, 152, 238);
+  }
+  .skills {
+    background: #b67e7e;
+  }
+  .resume {
+    background: rgb(77, 77, 77);
+  }
+  .prtfolio {
+    background: rgb(199, 255, 199);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav > li {
+    display: inline-block;
+    padding: 0 1em;
+  }
+  .nav > li > button {
+    border: none;
+    background: none;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1rem;
   }
 `;
