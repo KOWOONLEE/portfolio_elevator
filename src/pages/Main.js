@@ -208,7 +208,7 @@ const StyledMain = styled.div`
     position: absolute;
     width: 19%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    background-image: linear-gradient(to bottom, #051367, #dff6ff, #051367);
     border: 1px solid ${theme.border};
     animation: fadeInLeft 3s;
 
@@ -225,7 +225,7 @@ const StyledMain = styled.div`
     position: absolute;
     width: 4%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    background-image: linear-gradient(to bottom, #2d31fa, #dff6ff, #2d31fa);
     border: 1px solid ${theme.border};
     animation: openInLeft 3s;
 
@@ -244,7 +244,7 @@ const StyledMain = styled.div`
     right: 39%;
     width: 19%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    background-image: linear-gradient(to bottom, #051367, #dff6ff, #051367);
     border: 1px solid ${theme.border};
     animation: fadeInRight 3s;
 
@@ -263,7 +263,7 @@ const StyledMain = styled.div`
     right: 39%;
     width: 4%;
     height: 80.7%;
-    background-image: linear-gradient(to bottom, #7952b3, lightgrey, #7952b3);
+    background-image: linear-gradient(to bottom, #2d31fa, #dff6ff, #2d31fa);
     border: 1px solid ${theme.border};
     animation: openInRight 3s;
 
