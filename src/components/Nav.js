@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { theme } from "./../color";
 import styled from "styled-components";
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
@@ -17,6 +17,7 @@ const Nav = ({
   eleShake,
   setEleShake,
 }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
     setEleActive(!eleActive);
   };
@@ -24,10 +25,12 @@ const Nav = ({
     e.preventDefault();
     setScreen(e.target.textContent);
     setEleShake(true);
-    console.log(eleShake);
     setTimeout(() => {
       setEleActive(true);
-    }, 3000);
+    }, 2000);
+    setTimeout(() => {
+      navigate("/space");
+    }, 5000);
   };
   const nameRef = useRef();
 
@@ -116,14 +119,14 @@ const StyledNav = styled.div`
   a:hover {
     span {
       cursor: pointer;
-      color: ${theme.border};
+      color: ${theme.doorSide};
     }
   }
 
   .floorBtn {
     display: flex;
     height: 4vh;
-    background-color: ${theme.doorSide};
+    background-color: ${theme.door};
     align-items: center;
     padding: 10px 10px 10px 20px;
   }
@@ -131,18 +134,18 @@ const StyledNav = styled.div`
     display: flex;
     width: 30px;
     height: 30px;
-    color: ${theme.bg};
+    color: ${theme.door};
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
-    border: 1px double ${theme.border};
+    border: 1px double ${theme.door};
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
   .btnDetail {
-    color: ${theme.bg};
+    color: ${theme.doorSide};
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
@@ -158,8 +161,8 @@ const StyledNav = styled.div`
   svg {
     width: 30px;
     height: 30px;
-    fill: ${theme.doorSide};
-    border: 2px solid ${theme.doorSide};
+    fill: ${theme.bg};
+    border: 2px solid ${theme.bg};
     border-radius: 50%;
     padding: 5px;
   }
