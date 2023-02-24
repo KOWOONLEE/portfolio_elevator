@@ -116,7 +116,7 @@ const StyledNav = styled.div`
   a:hover {
     span {
       cursor: pointer;
-      color: black;
+      color: ${theme.border};
     }
   }
 
@@ -131,7 +131,7 @@ const StyledNav = styled.div`
     display: flex;
     width: 30px;
     height: 30px;
-    color: grey;
+    color: ${theme.bg};
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
@@ -142,7 +142,7 @@ const StyledNav = styled.div`
     text-align: center;
   }
   .btnDetail {
-    color: grey;
+    color: ${theme.bg};
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
@@ -158,8 +158,8 @@ const StyledNav = styled.div`
   svg {
     width: 30px;
     height: 30px;
-    fill: pink;
-    border: 1px solid grey;
+    fill: ${theme.doorSide};
+    border: 2px solid ${theme.doorSide};
     border-radius: 50%;
     padding: 5px;
   }

@@ -280,7 +280,7 @@ const StyledMain = styled.div`
     display: flex;
     width: 13%;
     height: 45%;
-    background-color: ${theme.grey};
+    background-color: ${theme.border};
     border: 2px solid ${theme.border};
     margin-left: 3%;
     text-decoration: none;
