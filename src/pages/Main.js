@@ -117,14 +117,16 @@ const StyledMain = styled.div`
   .eleDisplay {
     display: flex;
     position: absolute;
-    top: 9vh;
-    width: 18%;
+    top: 8vh;
+    width: 19%;
     height: 45px;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     background-color: black;
     letter-spacing: 2px;
+    border: 3px double white;
+    padding: 5px;
   }
   .eleDoor {
     display: flex;
@@ -139,34 +141,26 @@ const StyledMain = styled.div`
   }
   .star {
     display: flex;
-    position: relative;
+    position: absolute;
     width: 30px;
     height: 30px;
     background: transparent;
-    animation: moveStar 1s linear infinite;
-    &:after {
-      content: " ";
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: transparent;
-    }
   }
 
   .starActive {
     display: flex;
-    position: relative;
-    width: 30px;
-    height: 30px;
+    position: absolute;
+    /* width: 30px;
+    height: 30px; */
     background: transparent;
     animation: moveStar 1s linear infinite;
-    &:after {
+    /* &:after {
       content: " ";
       position: absolute;
       width: 30px;
       height: 30px;
       background: transparent;
-    }
+    } */
 
     @keyframes moveStar {
       from {
@@ -182,8 +176,8 @@ const StyledMain = styled.div`
     }
     svg {
       position: absolute;
-      width: 25px;
-      height: 25px;
+      /* width: 25px;
+      height: 25px; */
       top: 30vh;
       left: 10vw;
       fill: white;
