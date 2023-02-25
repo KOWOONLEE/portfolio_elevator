@@ -27,6 +27,8 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
     <>
       <StyledMain>
         <div className="eleWrap">
+          <div className="eleTop"></div>
+          <div className="eleBottom"></div>
           <div className="elevator">
             <div className="eleDisplay">
               <div className="displayWord">
@@ -73,6 +75,27 @@ const StyledMain = styled.div`
   align-items: center;
   justify-content: center;
 
+  .eleTop {
+    position: absolute;
+    left: 10vw;
+    top: 0;
+    width: 40%;
+    height: 0;
+    border-top: 7.5vh solid black;
+    border-left: 12vw solid transparent;
+    border-right: 12vw solid transparent;
+  }
+  .eleBottom {
+    position: absolute;
+    left: 10vw;
+    bottom: 0;
+    width: 40%;
+    height: 0;
+    border-left: 12vw solid transparent;
+    border-right: 12vw solid transparent;
+    border-bottom: 7.5vh solid black;
+  }
+
   .eleWrap {
     display: flex;
     width: 100vw;
@@ -83,10 +106,10 @@ const StyledMain = styled.div`
 
   .elevator {
     display: flex;
-    width: 45%;
-    height: 90%;
+    width: 40%;
+    height: 85%;
     background-color: ${theme.doorSide};
-    border: 3px solid ${theme.border};
+    border: 2px solid ${theme.border};
     align-items: flex-end;
     justify-content: center;
     font-weight: 600;
@@ -94,14 +117,14 @@ const StyledMain = styled.div`
   .eleDisplay {
     display: flex;
     position: absolute;
-    top: 6.5vh;
-    width: 20%;
-    height: 50px;
+    top: 9vh;
+    width: 18%;
+    height: 45px;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     background-color: black;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
   .eleDoor {
     display: flex;
@@ -114,50 +137,29 @@ const StyledMain = styled.div`
     height: 100%;
     object-fit: cover;
   }
-
   .star {
+    display: flex;
     position: relative;
-    float: inline-start;
     width: 30px;
     height: 30px;
     background: transparent;
-    /* box-shadow: 180px 300px yellow; */
-    animation: animStar 1s linear infinite;
+    animation: moveStar 1s linear infinite;
     &:after {
       content: " ";
       position: absolute;
       width: 30px;
       height: 30px;
       background: transparent;
-    }
-
-    @keyframes animStar {
-      from {
-        transform: translateX(100px);
-      }
-
-      to {
-        transform: translateX(100px);
-        opacity: 0;
-      }
-    }
-    svg {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      top: 35vh;
-      left: 12vw;
-      fill: white;
     }
   }
+
   .starActive {
+    display: flex;
     position: relative;
-    float: inline-start;
     width: 30px;
     height: 30px;
     background: transparent;
-    box-shadow: 180px 300px yellow;
-    animation: animStar 1s linear infinite;
+    animation: moveStar 1s linear infinite;
     &:after {
       content: " ";
       position: absolute;
@@ -166,7 +168,7 @@ const StyledMain = styled.div`
       background: transparent;
     }
 
-    @keyframes animStar {
+    @keyframes moveStar {
       from {
         transform: translateX(100px);
       }
@@ -182,8 +184,8 @@ const StyledMain = styled.div`
       position: absolute;
       width: 25px;
       height: 25px;
-      top: 35vh;
-      left: 12vw;
+      top: 30vh;
+      left: 10vw;
       fill: white;
       animation: biggerStar 5s linear infinite;
 
@@ -192,23 +194,24 @@ const StyledMain = styled.div`
           width: 25px;
           height: 25px;
           top: 35vh;
-          left: 12vw;
+          left: 10vw;
         }
 
         to {
           width: 60px;
           height: 60px;
-          top: 33vh;
-          left: 11vw;
+          top: 30vh;
+          left: 9vw;
         }
       }
     }
   }
   .eleDoorLeft {
+    display: flex;
     position: absolute;
-    width: 19%;
-    height: 80.7%;
-    background-image: linear-gradient(to bottom, #99b8f7, #d2daff, #99b8f7);
+    width: 17%;
+    height: 76.2%;
+    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
     border: 1px solid ${theme.border};
     animation: fadeInLeft 3s;
 
@@ -217,21 +220,21 @@ const StyledMain = styled.div`
         width: 4%;
       }
       100% {
-        width: 19%;
+        width: 17%;
       }
     }
   }
   .eleDoorLeftActive {
     position: absolute;
     width: 4%;
-    height: 80.7%;
-    background-image: linear-gradient(to bottom, #99b8f7, #d2daff, #99b8f7);
+    height: 76.2%;
+    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
     border: 1px solid ${theme.border};
     animation: openInLeft 3s;
 
     @keyframes openInLeft {
       0% {
-        width: 19%;
+        width: 17%;
       }
       100% {
         width: 4%;
@@ -241,10 +244,10 @@ const StyledMain = styled.div`
 
   .eleDoorRight {
     position: absolute;
-    right: 39%;
-    width: 19%;
-    height: 80.7%;
-    background-image: linear-gradient(to bottom, #99b8f7, #d2daff, #99b8f7);
+    right: 40.8%;
+    width: 17%;
+    height: 76.2%;
+    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
     border: 1px solid ${theme.border};
     animation: fadeInRight 3s;
 
@@ -253,23 +256,23 @@ const StyledMain = styled.div`
         width: 4%;
       }
       100% {
-        width: 19%;
+        width: 17%;
       }
     }
   }
 
   .eleDoorRightActive {
     position: absolute;
-    right: 39%;
+    right: 40.8%;
     width: 4%;
-    height: 80.7%;
-    background-image: linear-gradient(to bottom, #99b8f7, #d2daff, #99b8f7);
+    height: 76.2%;
+    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
     border: 1px solid ${theme.border};
     animation: openInRight 3s;
 
     @keyframes openInRight {
       0% {
-        width: 19%;
+        width: 17%;
       }
       100% {
         width: 4%;

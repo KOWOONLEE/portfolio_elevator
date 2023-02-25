@@ -1,8 +1,9 @@
 export const theme = {
   bg: "#EEF1FF",
-  door: "#EEF1FF",
-  doorSide: "#888bf7",
+  door: "#cecfdb",
+  doorSide: "#cecfdb",
   border: "",
-  elebutton: "#888bf7",
-  eleword: "#B1B2FF",
+  elebutton: "#313133",
+  eleword: "#313133",
+  hover: "#865DFF",
 };

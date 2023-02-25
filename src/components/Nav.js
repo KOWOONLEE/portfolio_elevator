@@ -28,9 +28,9 @@ const Nav = ({
     setTimeout(() => {
       setEleActive(true);
     }, 2000);
-    setTimeout(() => {
-      navigate("/space");
-    }, 5000);
+    // setTimeout(() => {
+    //   navigate("/space");
+    // }, 5000);
   };
   const nameRef = useRef();
 
@@ -119,7 +119,7 @@ const StyledNav = styled.div`
   a:hover {
     span {
       cursor: pointer;
-      color: ${theme.doorSide};
+      color: ${theme.hover};
     }
   }
 
@@ -134,7 +134,7 @@ const StyledNav = styled.div`
     display: flex;
     width: 30px;
     height: 30px;
-    color: ${theme.door};
+    color: ${theme.elebutton};
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
@@ -145,7 +145,7 @@ const StyledNav = styled.div`
     text-align: center;
   }
   .btnDetail {
-    color: ${theme.doorSide};
+    color: ${theme.elebutton};
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
