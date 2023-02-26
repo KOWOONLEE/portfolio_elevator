@@ -21,7 +21,7 @@ const Nav = ({
   const handleClick = () => {
     setEleActive(!eleActive);
   };
-  const floorClick = (e) => {
+  const moveAbout = (e) => {
     e.preventDefault();
     setScreen(e.target.textContent);
     setEleShake(true);
@@ -32,6 +32,18 @@ const Nav = ({
       navigate("/about");
     }, 5000);
   };
+  const moveSkills = (e) => {
+    e.preventDefault();
+    setScreen(e.target.textContent);
+    setEleShake(true);
+    setTimeout(() => {
+      setEleActive(true);
+    }, 2000);
+    setTimeout(() => {
+      navigate("/skills");
+    }, 5000);
+  };
+
   const nameRef = useRef();
 
   return (
@@ -57,9 +69,7 @@ const Nav = ({
             <span className="numberBtn">
               <span className="number">4</span>
             </span>
-            <span className="btnDetail" onClick={floorClick}>
-              Portfolio
-            </span>
+            <span className="btnDetail">Portfolio</span>
           </div>
         </Link>
         <Link to="/resume">
@@ -67,17 +77,15 @@ const Nav = ({
             <span className="numberBtn">
               <span className="number">3</span>
             </span>
-            <span className="btnDetail" onClick={floorClick}>
-              Resume
-            </span>
+            <span className="btnDetail">Resume</span>
           </div>
         </Link>
-        <Link to="/space">
+        <Link to="/skills">
           <div className="floorBtn" value="Skills">
             <span className="numberBtn">
               <span className="number">2</span>
             </span>
-            <span className="btnDetail" onClick={floorClick}>
+            <span className="btnDetail" onClick={moveSkills}>
               Skills
             </span>
           </div>
@@ -87,7 +95,7 @@ const Nav = ({
             <span className="numberBtn">
               <span className="number">1</span>
             </span>
-            <span className="btnDetail" onClick={floorClick}>
+            <span className="btnDetail" onClick={moveAbout}>
               About
             </span>
           </div>

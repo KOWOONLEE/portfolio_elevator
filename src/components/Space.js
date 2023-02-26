@@ -1,5 +1,7 @@
 import "./Space.scss";
 import { BsFillDiscFill } from "react-icons/bs";
+import { SiCodacy } from "react-icons/si";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +33,7 @@ const Space = ({ screen, setScreen }) => {
             navigate("/");
           }}
         >
-          <BsFillDiscFill />
+          <SiCodacy />
         </div>
         {mouseHover ? (
           <div className="hoverContent">

@@ -87,11 +87,12 @@ const StyledContact = styled.div`
       height: 40px;
       font-size: 18px;
       color: #00b4d8;
-      background: white;
       justify-content: center;
       margin-left: 20px;
+      margin-right: 10px;
       align-items: center;
       border-radius: 50px;
+      border: 1px solid #00b4d8;
     }
   }
   .address {
@@ -99,6 +100,6 @@ const StyledContact = styled.div`
   }
 
   .content {
-    margin-left: 60px;
+    margin-left: 70px;
   }
 `;
