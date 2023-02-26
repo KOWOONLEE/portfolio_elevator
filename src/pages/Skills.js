@@ -18,7 +18,7 @@ const Skills = ({ screen, setScreen }) => {
         <div className="paddingMargin">
           <p
             style={{
-              fontSize: "2em",
+              fontSize: "1.8em",
               lineHeight: "2.8vh",
               marginBottom: "50px",
             }}

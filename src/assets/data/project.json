@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "projectFilter": "Team Project",
+    "projectName": "일차 一茶",
+    "projectTitle": "카페 음료 주문 모바일웹 사이트",
+    "projectSkill": " React.js, Typescript",
+    "projectIntro": "스마트오더를 이용한 음료 주문",
+    "projectRoll": "메인페이지, 매장 검색, 상세페이지 리뷰, 기타 페이지"
+  },
+  {
+    "id": "2",
+    "projectFilter": "Team Project",
+    "projectName": "HALLO",
+    "projectTitle": "팀원 모집 커뮤니티 사이트",
+    "projectSkill": " React.js",
+    "projectIntro": "스터디,프로젝트 팀원 모집",
+    "projectRoll": "로그인, 회원가입, 이용약관"
+  },
+  {
+    "id": "3",
+    "projectFilter": "Team Project",
+    "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
+    "projectTitle": "오디오 플레이어",
+    "projectSkill": " React.js",
+    "projectIntro": "오디오 플레이어 및 녹음 기능",
+    "projectRoll": "오디오 플레이어, 플레이 리스트"
+  },
+  {
+    "id": "4",
+    "projectFilter": "Personal Project",
+    "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
+    "projectTitle": "병원예약 홈페이지",
+    "projectSkill": " React.js",
+    "projectIntro": "localstorage이용한 병원 예약",
+    "projectRoll": "로그인, 병원 에약, 예약 조회"
+  }
+]

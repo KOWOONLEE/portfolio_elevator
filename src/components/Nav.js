@@ -44,6 +44,30 @@ const Nav = ({
     }, 5000);
   };
 
+  const moveResume = (e) => {
+    e.preventDefault();
+    setScreen(e.target.textContent);
+    setEleShake(true);
+    setTimeout(() => {
+      setEleActive(true);
+    }, 2000);
+    setTimeout(() => {
+      navigate("/resume");
+    }, 5000);
+  };
+
+  const movePortfolio = (e) => {
+    e.preventDefault();
+    setScreen(e.target.textContent);
+    setEleShake(true);
+    setTimeout(() => {
+      setEleActive(true);
+    }, 2000);
+    setTimeout(() => {
+      navigate("/portfolio");
+    }, 5000);
+  };
+
   const nameRef = useRef();
 
   return (
@@ -69,7 +93,9 @@ const Nav = ({
             <span className="numberBtn">
               <span className="number">4</span>
             </span>
-            <span className="btnDetail">Portfolio</span>
+            <span className="btnDetail" onClick={movePortfolio}>
+              Portfolio
+            </span>
           </div>
         </Link>
         <Link to="/resume">
@@ -77,7 +103,9 @@ const Nav = ({
             <span className="numberBtn">
               <span className="number">3</span>
             </span>
-            <span className="btnDetail">Resume</span>
+            <span className="btnDetail" onClick={moveResume}>
+              Resume
+            </span>
           </div>
         </Link>
         <Link to="/skills">
