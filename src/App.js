@@ -3,7 +3,6 @@ import "./App.css";
 import { useState, useRef } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Main from "./pages/Main";
-import Space from "./pages/Space";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Resume from "./pages/Resume";
@@ -51,13 +50,24 @@ function App() {
         <Routes>
           <Route
             exact={true}
-            path="/space"
-            element={<Space screen={screen} setScreen={setScreen} />}
+            path="/about"
+            element={<About screen={screen} setScreen={setScreen} />}
           />
-          <Route exact={true} path="/about" element={<About />} />
-          <Route exact={true} path="/skills" element={<Skills />} />
-          <Route exact={true} path="/resume" element={<Resume />} />
-          <Route exact={true} path="/portfolio" element={<Portfolio />} />
+          <Route
+            exact={true}
+            path="/skills"
+            element={<Skills screen={screen} setScreen={setScreen} />}
+          />
+          <Route
+            exact={true}
+            path="/resume"
+            element={<Resume screen={screen} setScreen={setScreen} />}
+          />
+          <Route
+            exact={true}
+            path="/portfolio"
+            element={<Portfolio screen={screen} setScreen={setScreen} />}
+          />
         </Routes>
       </div>
     </div>

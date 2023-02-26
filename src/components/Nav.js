@@ -28,9 +28,9 @@ const Nav = ({
     setTimeout(() => {
       setEleActive(true);
     }, 2000);
-    // setTimeout(() => {
-    //   navigate("/space");
-    // }, 5000);
+    setTimeout(() => {
+      navigate("/about");
+    }, 5000);
   };
   const nameRef = useRef();
 
@@ -82,7 +82,7 @@ const Nav = ({
             </span>
           </div>
         </Link>
-        <Link to="/space">
+        <Link to="/about">
           <div className="floorBtn" value="About">
             <span className="numberBtn">
               <span className="number">1</span>
@@ -149,6 +149,7 @@ const StyledNav = styled.div`
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
+    font-family: "Chakra Petch", sans-serif;
   }
   .upDownBtn {
     display: flex;

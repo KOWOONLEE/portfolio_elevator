@@ -584,9 +584,9 @@
 .contentWrap {
   display: flex;
   position: relative;
-  top: 13vh;
+  top: 10vh;
   width: 65%;
-  height: 70%;
+  height: 80%;
   background-color: white;
   opacity: 0.3;
   border-radius: 5rem;
@@ -597,18 +597,89 @@
 .contentTitle {
   display: flex;
   position: absolute;
-  width: 50vw;
+  width: 40vw;
   height: 10vh;
-  top: 20vh;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  background-color: white;
+  top: 18vh;
+  left: 45%;
+  transform: translate(-45%, -20%);
+  background-color: black;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 .titleWord {
   display: flex;
-  color: black;
+  color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.backIcon {
+  display: flex;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 17vh;
+  right: 20%;
+  transform: translate(-50%, -20%);
+  // background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  svg {
+    width: 90px;
+    height: 90px;
+    fill: white;
+    animation: roundButton 3s linear infinite;
+
+    @keyframes roundButton {
+      from {
+      }
+
+      to {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  svg:hover {
+    cursor: pointer;
+  }
+}
+.contents {
+  display: flex;
+  position: absolute;
+  width: 60%;
+  height: 55vh;
+  top: 30vh;
+  left: 20vw;
+  background-color: white;
+  border-radius: 50px;
+  opacity: 0.5;
+  z-index: 99;
+}
+.hoverContent {
+  display: flex;
+  position: absolute;
+  font-size: 1.8em;
+  color: white;
+  top: 7vh;
+  right: 20%;
+  font-family: "Chakra Petch", sans-serif;
+  animation: fadeout 1s linear infinite;
+  z-index: 99;
+
+  @keyframes fadeout {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }

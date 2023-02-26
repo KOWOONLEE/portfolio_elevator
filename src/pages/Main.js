@@ -127,6 +127,7 @@ const StyledMain = styled.div`
     letter-spacing: 2px;
     border: 3px double white;
     padding: 5px;
+    font-family: "Chakra Petch", sans-serif;
   }
   .eleDoor {
     display: flex;
