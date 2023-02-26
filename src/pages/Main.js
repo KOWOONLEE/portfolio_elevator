@@ -17,7 +17,7 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
   useEffect(() => {
     const screenDisplay = (e) => {
       if (!eleActive) {
-        setScreen("환영합니다. 보고 싶은 포폴 내용을 클릭해 주세요 😃");
+        setScreen("Select the Floor button ");
       }
     };
     screenDisplay();

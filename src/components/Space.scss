@@ -584,9 +584,9 @@
 .contentWrap {
   display: flex;
   position: relative;
-  top: 10vh;
-  width: 65%;
-  height: 80%;
+  top: 5vh;
+  width: 75%;
+  height: 90%;
   background-color: white;
   opacity: 0.3;
   border-radius: 5rem;
@@ -597,11 +597,11 @@
 .contentTitle {
   display: flex;
   position: absolute;
-  width: 40vw;
+  width: 43vw;
   height: 10vh;
-  top: 18vh;
-  left: 45%;
-  transform: translate(-45%, -20%);
+  top: 13vh;
+  left: 40%;
+  transform: translate(-40%, -20%);
   background-color: black;
   justify-content: center;
   align-items: center;
@@ -611,28 +611,27 @@
   display: flex;
   color: white;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 10px;
   font-family: "Chakra Petch", sans-serif;
 }
 .backIcon {
   display: flex;
   position: absolute;
-  width: 90px;
-  height: 90px;
-  top: 17vh;
-  right: 20%;
+  width: 100px;
+  height: 100px;
+  top: 12vh;
+  right: 19%;
   transform: translate(-50%, -20%);
-  // background-color: white;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 
   svg {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     fill: white;
     animation: roundButton 3s linear infinite;
 
@@ -653,22 +652,23 @@
 .contents {
   display: flex;
   position: absolute;
-  width: 60%;
-  height: 55vh;
-  top: 30vh;
-  left: 20vw;
-  background-color: white;
+  width: 70%;
+  height: 67vh;
+  top: 25vh;
+  left: 15vw;
+  background-color: black;
   border-radius: 50px;
-  opacity: 0.5;
-  z-index: 99;
+  // opacity: 0.5;
+  z-index: 9;
 }
 .hoverContent {
   display: flex;
   position: absolute;
-  font-size: 1.8em;
+  font-size: 1.9em;
+  font-weight: 600;
   color: white;
-  top: 7vh;
-  right: 20%;
+  top: 4vh;
+  right: 18%;
   font-family: "Chakra Petch", sans-serif;
   animation: fadeout 1s linear infinite;
   z-index: 99;
