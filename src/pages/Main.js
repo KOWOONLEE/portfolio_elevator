@@ -4,7 +4,7 @@ import { theme } from "../color";
 import { useEffect, useState } from "react";
 import SpaceImg from "../assets/images/space.jpg";
 import { BsStars } from "react-icons/bs";
-import { img } from "../assets/images/kowoon_profile.jpeg";
+import profile from "../assets/images/kowoon_profile.jpeg";
 
 const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -30,9 +30,11 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
         <div className="eleWrap">
           <div className="eleTop"></div>
           <div className="eleBottom"></div>
+          <div className="profileOuter"></div>
           <div className="mirrorProfile">
             <div className="profileInner"></div>
             <div className="profileName">LEE KO WOON</div>
+            <img className="profileImg" src={profile} alt="profileImg"></img>
             <div className="profilegrad"></div>
           </div>
           <div className="elevator">
@@ -87,7 +89,7 @@ const StyledMain = styled.div`
     top: 0;
     width: 40%;
     height: 0;
-    border-top: 7.5vh solid black;
+    border-top: 7.5vh solid ${theme.elebutton};
     border-left: 12vw solid transparent;
     border-right: 12vw solid transparent;
   }
@@ -99,7 +101,7 @@ const StyledMain = styled.div`
     height: 0;
     border-left: 12vw solid transparent;
     border-right: 12vw solid transparent;
-    border-bottom: 7.5vh solid black;
+    border-bottom: 7.5vh solid ${theme.elebutton};
   }
 
   .eleWrap {
@@ -145,6 +147,19 @@ const StyledMain = styled.div`
     border-right: 4vw solid transparent;
     transform: rotate(-90deg);
   }
+  .profileOuter {
+    display: flex;
+    position: absolute;
+    top: 38vh;
+    left: 10vw;
+    margin-left: -5%;
+    width: 34vh;
+    height: 0;
+    border-top: 24vh solid ${theme.elebutton};
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+    transform: rotate(-90deg);
+  }
   .profileInner {
     display: flex;
     width: 26vh;
@@ -157,10 +172,7 @@ const StyledMain = styled.div`
   .profileInner::after {
     content: "";
     height: 26vh;
-    background-image: url("https://user-images.githubusercontent.com/108816777/221427126-8776fd4a-1861-497c-859f-fa091a1f467b.jpeg");
     position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
     top: -18.5vh;
     right: -4.1vw;
     z-index: -3;
@@ -180,6 +192,15 @@ const StyledMain = styled.div`
     color: black;
     /* text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 20px white, 0 0 30px white; */
     text-shadow: 2px 2px 2px grey;
+    z-index: 9;
+  }
+  .profileImg {
+    display: flex;
+    position: absolute;
+    width: 10vw;
+    left: 2vw;
+    top: -23vh;
+    transform: rotate(90deg);
   }
   .profilegrad {
     display: flex;
@@ -188,9 +209,17 @@ const StyledMain = styled.div`
     height: 20vh;
     top: -20vh;
     left: 0vw;
-    background: linear-gradient(45deg, #90e0ef, white);
-    opacity: 0.3;
-    z-index: -2;
+    background: linear-gradient(
+      45deg,
+      #90e0ef,
+      white,
+      white,
+      #90e0ef,
+      white,
+      #00b4d8
+    );
+    opacity: 0.2;
+    z-index: 2;
   }
   .eleDoor {
     display: flex;

@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { theme } from "./../color";
 import styled from "styled-components";
-import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
 import { useState } from "react";
 import { useRef } from "react";
@@ -12,14 +11,15 @@ const Nav = ({
   setEleActive,
   screen,
   setScreen,
-  pages,
-  movePage,
   eleShake,
   setEleShake,
 }) => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    setEleActive(!eleActive);
+  const openHandleClick = () => {
+    setEleActive(true);
+  };
+  const closeHandleClick = () => {
+    setEleActive(false);
   };
   const moveAbout = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/about");
-    }, 5500);
+    }, 5000);
   };
   const moveSkills = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/skills");
-    }, 5500);
+    }, 5000);
   };
 
   const moveResume = (e) => {
@@ -53,7 +53,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/resume");
-    }, 5500);
+    }, 5000);
   };
 
   const movePortfolio = (e) => {
@@ -65,7 +65,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/portfolio");
-    }, 5500);
+    }, 5000);
   };
 
   const nameRef = useRef();
@@ -88,51 +88,43 @@ const Nav = ({
             ))}
           </ul>
         </nav> */}
-        <Link to="/portfolio">
-          <div className="floorBtn" ref={nameRef}>
-            <span className="numberBtn">
-              <span className="number">4</span>
-            </span>
-            <span className="btnDetail" onClick={movePortfolio}>
-              Portfolio
-            </span>
-          </div>
-        </Link>
-        <Link to="/resume">
-          <div className="floorBtn" value="Resume">
-            <span className="numberBtn">
-              <span className="number">3</span>
-            </span>
-            <span className="btnDetail" onClick={moveResume}>
-              Resume
-            </span>
-          </div>
-        </Link>
-        <Link to="/skills">
-          <div className="floorBtn" value="Skills">
-            <span className="numberBtn">
-              <span className="number">2</span>
-            </span>
-            <span className="btnDetail" onClick={moveSkills}>
-              Skills
-            </span>
-          </div>
-        </Link>
-        <Link to="/about">
-          <div className="floorBtn" value="About">
-            <span className="numberBtn">
-              <span className="number">1</span>
-            </span>
-            <span className="btnDetail" onClick={moveAbout}>
-              About
-            </span>
-          </div>
-        </Link>
+        <div className="floorBtn" ref={nameRef}>
+          <span className="numberBtn">
+            <span className="number">4</span>
+          </span>
+          <span className="btnDetail" onClick={movePortfolio}>
+            Portfolio
+          </span>
+        </div>
+        <div className="floorBtn" value="Resume">
+          <span className="numberBtn">
+            <span className="number">3</span>
+          </span>
+          <span className="btnDetail" onClick={moveResume}>
+            Resume
+          </span>
+        </div>
+        <div className="floorBtn" value="Skills">
+          <span className="numberBtn">
+            <span className="number">2</span>
+          </span>
+          <span className="btnDetail" onClick={moveSkills}>
+            Skills
+          </span>
+        </div>
+        <div className="floorBtn" value="About">
+          <span className="numberBtn">
+            <span className="number">1</span>
+          </span>
+          <span className="btnDetail" onClick={moveAbout}>
+            About
+          </span>
+        </div>
         <div className="upDownBtn">
-          <i className="icon" onClick={handleClick}>
+          <i className="icon" onClick={openHandleClick}>
             <BsArrowsExpand />
           </i>
-          <i className="icon">
+          <i className="icon" onClick={closeHandleClick}>
             <BsArrowsCollapse />
           </i>
         </div>
@@ -144,27 +136,24 @@ const Nav = ({
 export default Nav;
 
 const StyledNav = styled.div`
-  margin-top: 3vh;
+  margin-top: 4vh;
   width: 100%;
   justify-content: center;
   align-items: center;
 
-  a {
-    text-decoration: none;
+  .floorBtn {
+    display: flex;
+    height: 4vh;
+    background-color: white;
+    align-items: center;
+    padding: 10px 10px 10px 20px;
   }
-  a:hover {
+
+  .floorBtn:hover {
     span {
       cursor: pointer;
       color: ${theme.hover};
     }
-  }
-
-  .floorBtn {
-    display: flex;
-    height: 4vh;
-    background-color: ${theme.door};
-    align-items: center;
-    padding: 10px 10px 10px 20px;
   }
   .numberBtn {
     display: flex;

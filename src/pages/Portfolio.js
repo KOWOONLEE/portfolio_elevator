@@ -4,7 +4,6 @@ import firstImg from "../assets/images/project/first/first_main.png";
 import secondImg from "../assets/images/second_main.png";
 import thirdMain from "../assets/images/project/third/3rd_main.png";
 import fourthImg from "../assets/images/project/4th_main.png";
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import projectData from "../assets/data/project.json";
 
