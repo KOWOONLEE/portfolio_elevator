@@ -649,18 +649,7 @@
     cursor: pointer;
   }
 }
-.contents {
-  display: flex;
-  position: absolute;
-  width: 70%;
-  height: 67vh;
-  top: 25vh;
-  left: 15vw;
-  background-color: black;
-  border-radius: 50px;
-  // opacity: 0.5;
-  z-index: 9;
-}
+
 .hoverContent {
   display: flex;
   position: absolute;
@@ -682,4 +671,16 @@
       opacity: 1;
     }
   }
+}
+.contents {
+  display: flex;
+  position: absolute;
+  width: 70%;
+  height: 67vh;
+  top: 25vh;
+  left: 15vw;
+  background-color: black;
+  border-radius: 50px;
+  // opacity: 0.5;
+  z-index: 9;
 }

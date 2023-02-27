@@ -22,11 +22,11 @@ const FirstProject = () => {
   };
   return (
     <StyledFirstProject>
-      <ProjectSpace> </ProjectSpace>
+      <ProjectSpace />
       <div className="projectName">
-        <div className="title">HALLO - 커뮤니티 모집 사이트</div>
+        <div className="title">HALLO - 팀원 모집 커뮤니티 사이트</div>
       </div>
-      <div className="contentWrap">
+      <div className="firstProjectWrap">
         <div className="slideImg">
           <Slider {...settings}>
             <div className="slideTitleWrap">
@@ -154,8 +154,6 @@ const FirstProject = () => {
 export default FirstProject;
 
 const StyledFirstProject = styled.div`
-  display: flex;
-
   .projectName {
     display: flex;
     position: absolute;
@@ -166,57 +164,53 @@ const StyledFirstProject = styled.div`
     width: 47vw;
     height: 10vh;
     top: 16vh;
-    left: 23vw;
+    left: 22vw;
   }
   .title {
     font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 2px;
   }
-  /* .projectContents {
+  .firstProjectWrap {
     display: flex;
     position: absolute;
+    width: 80%;
+    height: 55vh;
     top: 29vh;
     left: 10vw;
-    width: 80%;
-    height: 65vh;
-    background-color: black;
-    border-radius: 20px;
-    overflow-y: scroll;
-  } */
-  .contentWrap {
-    display: flex;
-    position: absolute;
-    width: 90%;
-    /* margin: 0 auto; */
-    z-index: 99;
-    top: 29vh;
-    left: 10vw;
-    width: 80%;
-    height: 65vh;
-    overflow-y: scroll;
     color: white;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    overflow-y: scroll;
+    padding-top: 10vh;
+    /* background-color: black; */
   }
+  .firstProjectWrap::-webkit-scrollbar {
+    width: 10px; /* 스크롤바의 너비 */
+    z-index: 99;
+  }
+
+  .firstProjectWrap::-webkit-scrollbar-thumb {
+    height: 20%; /* 스크롤바의 길이 */
+    background: #00b4d8; /* 스크롤바의 색상 */
+    border-radius: 10px;
+  }
+
   .slideTitleWrap {
     display: flex;
     text-align: center;
     padding: 5px;
+    margin-top: 40px;
   }
   .slideTitle {
     font-size: 1.3em;
-    z-index: 999;
+    z-index: 99;
   }
 
-  .slideTitle::after {
-    content: "";
-    display: flex;
-    text-align: center;
-    align-items: center;
-    width: 9vw;
-    margin-top: 5px;
-    margin-left: 20vw;
-    border-bottom: 2px solid gray;
-  }
   .slidelist {
-    width: 35vw;
+    width: 30vw;
     font-size: 1.1em;
     text-align: left;
     line-height: 1.5em;
@@ -229,7 +223,7 @@ const StyledFirstProject = styled.div`
 
   .slideImg {
     display: inline-block;
-    width: 55%;
+    width: 45%;
     height: 80vh;
     margin-right: 5%;
     padding: 40px;
@@ -251,7 +245,8 @@ const StyledFirstProject = styled.div`
     margin-top: 20px;
     padding: 30px;
     box-shadow: 0px 0 30px gray;
-    /* box-shadow: 0px 0 30px rgb(5 13 24 / 8%); */
+    margin-top: 20vh;
+    text-align: left;
     h2 {
       font-size: 1.6em;
       text-align: center;
@@ -259,14 +254,14 @@ const StyledFirstProject = styled.div`
     }
     h4 {
       text-align: center;
-      color: #205878;
+      color: #90e0ef;
     }
     li {
       font-size: 1em;
       line-height: 29px;
     }
     a {
-      color: #38b2ea;
+      color: #90e0ef;
       text-decoration: none;
       font-weight: 500;
     }
