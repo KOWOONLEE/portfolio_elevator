@@ -30,7 +30,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/about");
-    }, 5000);
+    }, 5500);
   };
   const moveSkills = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/skills");
-    }, 5000);
+    }, 5500);
   };
 
   const moveResume = (e) => {
@@ -53,7 +53,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/resume");
-    }, 5000);
+    }, 5500);
   };
 
   const movePortfolio = (e) => {
@@ -65,7 +65,7 @@ const Nav = ({
     }, 2000);
     setTimeout(() => {
       navigate("/portfolio");
-    }, 5000);
+    }, 5500);
   };
 
   const nameRef = useRef();

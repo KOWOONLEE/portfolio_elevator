@@ -14,17 +14,18 @@ const Portfolio = ({ screen, setScreen }) => {
     <StyledPortfolio>
       <Space screen={screen} setScreen={setScreen}></Space>
       <section id="portfolio" className="portfolioSection">
-        <div className="paddingMargin">
-          <h1>Portfolio</h1>
-          <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
-            그동안 진행했던 프로젝트 리스트입니다.
-          </p>
-          <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
-            <strong>
-              프로젝트 카드 클릭 후 상세페이지로 이동하여, 자세한 내용을
-              확인해주세요 😃
-            </strong>
-          </p>
+        <div className="explain">
+          <div className="paddingMargin">
+            <p style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
+              그동안 진행했던 프로젝트 리스트입니다.
+            </p>
+            <p style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
+              <strong>
+                프로젝트 카드 클릭 후 상세페이지로 이동하여, 자세한 내용을
+                확인해주세요 😃
+              </strong>
+            </p>
+          </div>
           <div className="portfolioContainer">
             <div
               className="portfolioWrap"
@@ -138,8 +139,6 @@ const Portfolio = ({ screen, setScreen }) => {
                 </div>
               ))} */}
           </div>
-
-          <div className="portfolioContainer"></div>
         </div>
       </section>
     </StyledPortfolio>
@@ -151,14 +150,38 @@ const StyledPortfolio = styled.div`
   .portfolioSection {
     display: flex;
     position: absolute;
-    top: 26vh;
-    left: 17vw;
+    top: 28vh;
+    left: 16vw;
     width: 67%;
-    height: 65vh;
+    height: 62vh;
     color: white;
     font-family: "Chakra Petch", sans-serif;
     z-index: 99;
     align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    overflow-y: scroll;
+  }
+
+  /* 아래의 모든 코드는 영역::코드로 사용 */
+  .portfolioSection::-webkit-scrollbar {
+    width: 10px; /* 스크롤바의 너비 */
+    z-index: 99;
+  }
+
+  .portfolioSection::-webkit-scrollbar-thumb {
+    height: 20%; /* 스크롤바의 길이 */
+    background: #00b4d8; /* 스크롤바의 색상 */
+    border-radius: 10px;
+  }
+
+  .explain {
+    display: inline-block;
+    position: absolute;
+    top: 1vh;
+  }
+  .portfolioContainer {
+    display: flex;
     justify-content: center;
   }
   .portfolioWrap {
@@ -169,9 +192,10 @@ const StyledPortfolio = styled.div`
     position: relative;
     color: black;
     background-color: white;
-    margin: 10px;
+    margin: 20px 10px 10px 10px;
     padding: 10px;
-    overflow: hidden;
+    vertical-align: top;
+    /* border-radius: 20px; */
     z-index: 1;
 
     img {
