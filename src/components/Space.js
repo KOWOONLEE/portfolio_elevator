@@ -1,5 +1,6 @@
 import "./Space.scss";
 import { SiCodacy } from "react-icons/si";
+import { MdOutlineSensorDoor } from "react-icons/md";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +34,9 @@ const Space = ({ screen, setScreen }) => {
           }}
         >
           <SiCodacy />
+          <div className="elevatorButton">
+            <MdOutlineSensorDoor />
+          </div>
         </div>
         {mouseHover ? (
           <div className="hoverContent">

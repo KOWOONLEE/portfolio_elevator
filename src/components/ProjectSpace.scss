@@ -608,8 +608,8 @@
 .projectIcon {
   display: flex;
   position: absolute;
-  width: 95px;
-  height: 95px;
+  width: 85px;
+  height: 85px;
   top: 18vh;
   right: 17%;
   transform: translate(-50%, -20%);
@@ -618,8 +618,8 @@
   border-radius: 10px;
 
   svg {
-    width: 95px;
-    height: 95px;
+    width: 85px;
+    height: 85px;
     fill: white;
     animation: roundButton 3s linear infinite;
 
@@ -630,6 +630,20 @@
       to {
         transform: rotate(180deg);
       }
+    }
+  }
+
+  .listButton {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    color: white;
+
+    svg {
+      width: 35px;
+      height: 35px;
+      fill: #90e0ef;
+      animation: none;
     }
   }
 
@@ -644,7 +658,7 @@
   font-weight: 600;
   color: white;
   top: 11vh;
-  right: 15%;
+  right: 12%;
   font-family: "Chakra Petch", sans-serif;
   animation: fadeout 1s linear infinite;
   z-index: 99;

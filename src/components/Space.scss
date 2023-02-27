@@ -649,6 +649,19 @@
     cursor: pointer;
   }
 }
+.elevatorButton {
+  display: flex;
+  position: absolute;
+  z-index: 99;
+  color: white;
+
+  svg {
+    width: 35px;
+    height: 35px;
+    fill: #00b4d8;
+    animation: none;
+  }
+}
 
 .hoverContent {
   display: flex;

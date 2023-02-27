@@ -245,7 +245,7 @@ const StyledFirstProject = styled.div`
     margin-top: 20px;
     padding: 30px;
     box-shadow: 0px 0 30px gray;
-    margin-top: 20vh;
+    margin-top: 30vh;
     text-align: left;
     h2 {
       font-size: 1.6em;
@@ -266,7 +266,7 @@ const StyledFirstProject = styled.div`
       font-weight: 500;
     }
     a:hover {
-      color: #f6a7b4;
+      color: #865dff;
     }
   }
   .slick-slider {

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-
 import styled from "styled-components";
 
 const ProjectNav = () => {
@@ -146,6 +145,8 @@ const ProjectNav = () => {
 export default ProjectNav;
 
 const StyledNav = styled.div`
+  letter-spacing: 1px;
+
   .projectDetailword {
     cursor: pointer;
   }
@@ -281,14 +282,12 @@ const Divhover = styled.div`
 
   .first {
     display: flex;
-    background-color: rgb(0, 0, 0, 0.5);
-    color: white;
+    color: #00b4d8;
     width: 30vw;
     height: 50px;
-    margin: 0 auto;
+    margin: -5px auto;
     align-items: center;
     border-radius: 10px;
-    top: 0px;
     animation-duration: 1s;
     animation-name: fadeout;
 

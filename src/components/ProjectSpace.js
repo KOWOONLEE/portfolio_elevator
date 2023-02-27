@@ -1,5 +1,6 @@
 import "./ProjectSpace.scss";
-import { BsFillDiscFill } from "react-icons/bs";
+import { SiCodacy } from "react-icons/si";
+import { BsListStars } from "react-icons/bs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectNav from "./ProjectNav";
@@ -31,7 +32,10 @@ const ProjectSpace = () => {
             navigate("/portfolio");
           }}
         >
-          <BsFillDiscFill />
+          <SiCodacy />
+          <div className="listButton">
+            <BsListStars />
+          </div>
         </div>
         {projectMouseHover ? (
           <div className="projectHoverContent">
