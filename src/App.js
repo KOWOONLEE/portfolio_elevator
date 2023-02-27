@@ -7,6 +7,11 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
+import ProjectData from "./assets/data/project.json";
+import FirstProject from "./pages/projects/FirstProject";
+import SecondProject from "./pages/projects/SecondProject";
+import ThirdProject from "./pages/projects/ThirdProject";
+import FourthProject from "./pages/projects/FourthProject";
 
 const pages = [
   { title: "Space", link: "space" },
@@ -16,6 +21,7 @@ const pages = [
 ];
 function App() {
   const [screen, setScreen] = useState("");
+  const [project, setProject] = useState(ProjectData);
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -67,6 +73,27 @@ function App() {
             exact={true}
             path="/portfolio"
             element={<Portfolio screen={screen} setScreen={setScreen} />}
+          />
+
+          <Route
+            path="/project/first"
+            element={<FirstProject project={project} setProject={setProject} />}
+          />
+          <Route
+            path="/project/second"
+            element={
+              <SecondProject project={project} setProject={setProject} />
+            }
+          />
+          <Route
+            path="/project/third"
+            element={<ThirdProject project={project} setProject={setProject} />}
+          />
+          <Route
+            path="/project/fourth"
+            element={
+              <FourthProject project={project} setProject={setProject} />
+            }
           />
         </Routes>
       </div>

@@ -155,7 +155,6 @@ const StyledPortfolio = styled.div`
     width: 67%;
     height: 62vh;
     color: white;
-    font-family: "Chakra Petch", sans-serif;
     z-index: 99;
     align-items: center;
     justify-content: center;

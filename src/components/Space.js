@@ -1,5 +1,4 @@
 import "./Space.scss";
-import { BsFillDiscFill } from "react-icons/bs";
 import { SiCodacy } from "react-icons/si";
 
 import { useState } from "react";

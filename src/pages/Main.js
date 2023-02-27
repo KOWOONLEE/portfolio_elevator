@@ -133,7 +133,6 @@ const StyledMain = styled.div`
     letter-spacing: 2px;
     border: 3px double white;
     padding: 5px;
-    font-family: "Chakra Petch", sans-serif;
   }
   .mirrorProfile {
     display: flex;
@@ -180,8 +179,7 @@ const StyledMain = styled.div`
     font-size: 1.2em;
     color: black;
     /* text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 20px white, 0 0 30px white; */
-    text-shadow: 2px 2px 2px #00b4d8;
-    font-family: "Chakra Petch", sans-serif;
+    text-shadow: 2px 2px 2px grey;
   }
   .profilegrad {
     display: flex;
@@ -208,8 +206,6 @@ const StyledMain = styled.div`
   .star {
     display: flex;
     position: absolute;
-    width: 30px;
-    height: 30px;
     background: transparent;
   }
 

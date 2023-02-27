@@ -59,7 +59,6 @@ const StyledAbout = styled.div`
     width: 67%;
     height: 65vh;
     color: white;
-    font-family: "Chakra Petch", sans-serif;
     z-index: 99;
   }
   .aboutLeft {
