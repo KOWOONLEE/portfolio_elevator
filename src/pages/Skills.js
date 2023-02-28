@@ -1,6 +1,5 @@
 import Space from "../components/Space";
 import styled from "styled-components";
-import { theme } from "../color";
 import htmlIcon from "../assets/images/icons/html-5.png";
 import cssIcon from "../assets/images/icons/css.png";
 import jsIcon from "../assets/images/icons/js.png";

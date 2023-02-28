@@ -10,11 +10,6 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
   const [eleShake, setEleShake] = useState(false);
 
-  //처음 렌더링에서는 페이지 소개
-  //층 버튼을 누르면 해당 층수 screen
-  //3초 뒤에 문 열리면서
-  // 다른 페이지 이동
-
   useEffect(() => {
     const screenDisplay = (e) => {
       if (!eleActive) {
@@ -190,7 +185,6 @@ const StyledMain = styled.div`
     right: -2vw;
     font-size: 1.2em;
     color: black;
-    /* text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 20px white, 0 0 30px white; */
     text-shadow: 2px 2px 2px grey;
     z-index: 9;
   }
@@ -241,17 +235,8 @@ const StyledMain = styled.div`
   .starActive {
     display: flex;
     position: absolute;
-    /* width: 30px;
-    height: 30px; */
     background: transparent;
     animation: moveStar 1s linear infinite;
-    /* &:after {
-      content: " ";
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: transparent;
-    } */
 
     @keyframes moveStar {
       from {
@@ -267,8 +252,6 @@ const StyledMain = styled.div`
     }
     svg {
       position: absolute;
-      /* width: 25px;
-      height: 25px; */
       top: 30vh;
       left: 10vw;
       fill: white;
@@ -380,7 +363,6 @@ const StyledMain = styled.div`
     color: white;
     font-size: 1.4em;
     overflow: hidden;
-    /* position: relative; */
     background: black;
     border: 1px solid #4a4a4a;
   }

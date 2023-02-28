@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { theme } from "./../color";
 import styled from "styled-components";
 import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
-import { useState } from "react";
 import { useRef } from "react";
 
 const Nav = ({
@@ -73,21 +72,6 @@ const Nav = ({
   return (
     <>
       <StyledNav>
-        {/* <nav>
-          <ul className="nav">
-            {pages.map((m, idx) => (
-              <li key={m.title + idx}>
-                <button
-                  onClick={() => {
-                    movePage(m.link);
-                  }}
-                >
-                  {m.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav> */}
         <div className="floorBtn" ref={nameRef}>
           <span className="numberBtn">
             <span className="number">4</span>

@@ -15,7 +15,7 @@ const Portfolio = ({ screen, setScreen }) => {
       <section id="portfolio" className="portfolioSection">
         <div className="explain">
           <div className="paddingMargin">
-            <p style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
+            <p style={{ fontSize: "1.2em", lineHeight: "1vh" }}>
               그동안 진행했던 프로젝트 리스트입니다.
             </p>
             <p style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
