@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import SpaceImg from "../assets/images/space.jpg";
 import { BsStars } from "react-icons/bs";
 import profile from "../assets/images/kowoon_profile.jpeg";
+import eleImg from "../assets/images/elevator_frame.jpg";
 
 const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -23,6 +24,29 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
     <>
       <StyledMain>
         <div className="eleWrap">
+          <div className="eleFrame">
+            <img className="eleFrameImg" src={eleImg} alt="img" />
+            <div className="eleDisplayWrap">
+              <div className="eleDisplay">
+                <div className="displayWord">
+                  <p className="word">{screen}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="eleDoor">
+          <div
+            className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
+          ></div>
+          <div
+            className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}
+          ></div>
+        </div>
+        <div className="eleButttonWrap">
+          <div className="eleButton"></div>
+        </div>
+        {/* <div className="eleWrap">
           <div className="eleTop"></div>
           <div className="eleBottom"></div>
           <div className="profileOuter"></div>
@@ -63,7 +87,7 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
               setEleShake={setEleShake}
             />
           </div>
-        </div>
+        </div> */}
       </StyledMain>
     </>
   );
@@ -76,9 +100,123 @@ const StyledMain = styled.div`
   height: 100vh;
   background-color: ${theme.bg};
   align-items: center;
-  justify-content: center;
 
-  .eleTop {
+  .eleWrap {
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  .eleFrame {
+    width: 75vw;
+    height: 95vh;
+    margin: 2vw;
+  }
+  .eleFrameImg {
+    width: 75vw;
+    height: 94vh;
+  }
+
+  .eleButttonWrap {
+    display: flex;
+    margin: 2vw;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+  }
+  .eleButton {
+    width: 15vw;
+    height: 47vh;
+    background-color: white;
+  }
+  .eleDisplayWrap {
+    display: flex;
+    position: absolute;
+    top: 5.5vh;
+    width: 75vw;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+  }
+  .eleDisplay {
+    display: flex;
+    width: 32%;
+    text-transform: uppercase;
+    background-color: black;
+    letter-spacing: 2px;
+    border: 3px double white;
+    padding: 5px;
+  }
+  .displayWord {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    color: white;
+    font-size: 1.4em;
+    overflow: hidden;
+    background: black;
+    border: 1px solid #4a4a4a;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+  }
+  .word {
+    color: white;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding-top: 7px;
+    white-space: nowrap;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 5s linear infinite;
+    -webkit-animation: scroll-left 5s linear infinite;
+    animation: scroll-left 5s linear infinite;
+
+    @-moz-keyframes scroll-left {
+      0% {
+        -moz-transform: translateX(100%);
+      }
+      100% {
+        -moz-transform: translateX(-100%);
+      }
+    }
+    @-webkit-keyframes scroll-left {
+      0% {
+        -webkit-transform: translateX(100%);
+      }
+      100% {
+        -webkit-transform: translateX(-100%);
+      }
+    }
+    @keyframes scroll-left {
+      0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+    }
+  }
+  .eleDoor {
+    display: flex;
+    position: absolute;
+    width: 58%;
+    height: 78.5%;
+    top: 14vh;
+    left: 10.5vw;
+    background-color: pink;
+  }
+
+  /* .eleTop {
     position: absolute;
     left: 17vw;
     top: 0;
@@ -411,5 +549,5 @@ const StyledMain = styled.div`
         transform: translateX(-100%);
       }
     }
-  }
+  } */
 `;
