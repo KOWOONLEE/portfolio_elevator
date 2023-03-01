@@ -2,10 +2,9 @@ import styled from "styled-components";
 import Nav from "../components/Nav";
 import { theme } from "../color";
 import { useEffect, useState } from "react";
-import SpaceImg from "../assets/images/space.jpg";
-import { BsStars } from "react-icons/bs";
-import profile from "../assets/images/kowoon_profile.jpeg";
 import eleImg from "../assets/images/elevator_frame.jpg";
+import eleDoorOne from "../assets/images/door.jpg";
+import eleButton from "../assets/images/elebutton.jpeg";
 
 const Main = ({ screen, setScreen, pages, movePage }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -36,15 +35,28 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
           </div>
         </div>
         <div className="eleDoor">
-          <div
-            className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}
-          ></div>
-          <div
-            className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}
-          ></div>
+          <div className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}>
+            <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
+          </div>
+          <div className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}>
+            {" "}
+            <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
+          </div>
         </div>
         <div className="eleButttonWrap">
-          <div className="eleButton"></div>
+          <div className="eleButton">
+            <img src={eleButton} alt="elebuttonImg" />
+            <Nav
+              eleActive={eleActive}
+              setEleActive={setEleActive}
+              screen={screen}
+              setScreen={setScreen}
+              pages={pages}
+              movePage={movePage}
+              eleShake={eleShake}
+              setEleShake={setEleShake}
+            />
+          </div>
         </div>
         {/* <div className="eleWrap">
           <div className="eleTop"></div>
@@ -116,18 +128,6 @@ const StyledMain = styled.div`
     height: 94vh;
   }
 
-  .eleButttonWrap {
-    display: flex;
-    margin: 2vw;
-    justify-content: center;
-    align-items: center;
-    vertical-align: center;
-  }
-  .eleButton {
-    width: 15vw;
-    height: 47vh;
-    background-color: white;
-  }
   .eleDisplayWrap {
     display: flex;
     position: absolute;
@@ -167,6 +167,7 @@ const StyledMain = styled.div`
     width: 100%;
     height: 100%;
     text-align: center;
+    font-weight: 600;
     margin: 0;
     padding-top: 7px;
     white-space: nowrap;
@@ -214,6 +215,110 @@ const StyledMain = styled.div`
     top: 14vh;
     left: 10.5vw;
     background-color: pink;
+  }
+  .eleDoorLeft {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    animation: fadeInLeft 3s;
+
+    @keyframes fadeInLeft {
+      0% {
+        width: 5%;
+      }
+      100% {
+        width: 50%;
+      }
+    }
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .eleDoorLeftActive {
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    animation: openInLeft 3s;
+
+    @keyframes openInLeft {
+      0% {
+        width: 50%;
+      }
+      100% {
+        width: 5%;
+      }
+    }
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .eleDoorRight {
+    position: absolute;
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    animation: fadeInRight 3s;
+
+    @keyframes fadeInRight {
+      0% {
+        width: 5%;
+      }
+      100% {
+        width: 50%;
+      }
+    }
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .eleDoorRightActive {
+    position: absolute;
+    right: 0%;
+    width: 5%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
+    animation: openInRight 3s;
+
+    @keyframes openInRight {
+      0% {
+        width: 50%;
+      }
+      100% {
+        width: 5%;
+      }
+    }
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .eleButttonWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    margin-left: 2vw;
+  }
+  .eleButton {
+    width: 15vw;
+    height: 47vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: 1px solid black;
+    }
   }
 
   /* .eleTop {

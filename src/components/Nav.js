@@ -120,17 +120,20 @@ const Nav = ({
 export default Nav;
 
 const StyledNav = styled.div`
-  margin-top: 4vh;
-  width: 100%;
+  display: inline-block;
+  position: absolute;
+  width: 15vw;
+  height: 50vh;
+  top: 30%;
+  right: 4%;
   justify-content: center;
   align-items: center;
 
   .floorBtn {
     display: flex;
     height: 4vh;
-    background-color: white;
     align-items: center;
-    padding: 10px 10px 10px 20px;
+    padding: 10px 10px 10px 40px;
   }
 
   .floorBtn:hover {
@@ -147,8 +150,9 @@ const StyledNav = styled.div`
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
-    border: 1px double ${theme.door};
+    border: 1px solid black;
     border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px black;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -158,7 +162,6 @@ const StyledNav = styled.div`
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
-    font-family: "Chakra Petch", sans-serif;
   }
   .upDownBtn {
     display: flex;
@@ -175,6 +178,7 @@ const StyledNav = styled.div`
     border: 2px solid ${theme.bg};
     border-radius: 50%;
     padding: 5px;
+    box-shadow: 1px 0px 1px 0px black;
   }
 
   .icon {
@@ -182,6 +186,7 @@ const StyledNav = styled.div`
     size: 1.1em;
     padding: 3px;
     transform: rotate(90deg);
+
     margin-right: 10px;
     margin-left: 10px;
 
@@ -189,81 +194,5 @@ const StyledNav = styled.div`
       cursor: pointer;
       fill: #12cc7e;
     }
-    svg:focus {
-      cursor: pointer;
-      fill: pink;
-    }
-  }
-  .loaded {
-    animation: 1s ease load forwards;
-  }
-  .unloaded {
-    animation: 1s ease unload forwards;
-  }
-  @keyframes load {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-  @keyframes unload {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  }
-
-  .wrap {
-    opacity: 0;
-  }
-
-  .about,
-  .skills,
-  .resume,
-  .prtfolio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-    font-size: 2rem;
-  }
-
-  .about {
-    background: rgb(86, 152, 238);
-  }
-  .skills {
-    background: #b67e7e;
-  }
-  .resume {
-    background: rgb(77, 77, 77);
-  }
-  .prtfolio {
-    background: rgb(199, 255, 199);
-  }
-
-  .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .nav > li {
-    display: inline-block;
-    padding: 0 1em;
-  }
-  .nav > li > button {
-    border: none;
-    background: none;
-    outline: 0;
-    cursor: pointer;
-    font-size: 1rem;
   }
 `;
