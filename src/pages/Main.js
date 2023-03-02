@@ -1,12 +1,20 @@
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import { theme } from "../color";
+import ProjectData from "../assets/data/project.json";
 import { useEffect, useState } from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import eleImg from "../assets/images/elevator_frame.jpg";
 import eleDoorOne from "../assets/images/door.jpg";
 import eleButton from "../assets/images/elebutton.jpeg";
+import About from "./About";
+import Skills from "./Skills";
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+import Test from "../components/Test";
+import Space from "../components/Space";
 
-const Main = ({ screen, setScreen, pages, movePage }) => {
+const Main = ({ screen, setScreen, pages, movePage, project, setProject }) => {
   const [eleActive, setEleActive] = useState(false);
   const [eleShake, setEleShake] = useState(false);
 
@@ -35,11 +43,11 @@ const Main = ({ screen, setScreen, pages, movePage }) => {
           </div>
         </div>
         <div className="eleDoor">
+          <Space />
           <div className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}>
             <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
           </div>
           <div className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}>
-            {" "}
             <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
           </div>
         </div>
@@ -126,6 +134,8 @@ const StyledMain = styled.div`
   .eleFrameImg {
     width: 75vw;
     height: 94vh;
+    border: 1px solid black;
+    z-index: 3;
   }
 
   .eleDisplayWrap {
@@ -137,6 +147,7 @@ const StyledMain = styled.div`
     justify-content: center;
     align-items: center;
     vertical-align: center;
+    z-index: 1;
   }
   .eleDisplay {
     display: flex;
@@ -144,7 +155,7 @@ const StyledMain = styled.div`
     text-transform: uppercase;
     background-color: black;
     letter-spacing: 2px;
-    border: 3px double white;
+    border: 2px double white;
     padding: 5px;
   }
   .displayWord {
@@ -221,6 +232,7 @@ const StyledMain = styled.div`
     position: absolute;
     width: 50%;
     height: 100%;
+    z-index: 99;
     animation: fadeInLeft 3s;
 
     @keyframes fadeInLeft {
@@ -241,6 +253,7 @@ const StyledMain = styled.div`
     position: absolute;
     width: 5%;
     height: 100%;
+    z-index: 99;
     animation: openInLeft 3s;
 
     @keyframes openInLeft {
@@ -263,6 +276,7 @@ const StyledMain = styled.div`
     right: 0%;
     width: 50%;
     height: 100%;
+    z-index: 99;
     animation: fadeInRight 3s;
 
     @keyframes fadeInRight {
@@ -285,7 +299,7 @@ const StyledMain = styled.div`
     right: 0%;
     width: 5%;
     height: 100%;
-    background-image: linear-gradient(to bottom, #313133, #d2daff, #313133);
+    z-index: 99;
     animation: openInRight 3s;
 
     @keyframes openInRight {
@@ -312,6 +326,7 @@ const StyledMain = styled.div`
   .eleButton {
     width: 15vw;
     height: 47vh;
+    z-index: 3;
 
     img {
       width: 100%;

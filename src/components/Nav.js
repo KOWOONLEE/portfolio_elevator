@@ -134,6 +134,7 @@ const StyledNav = styled.div`
     height: 4vh;
     align-items: center;
     padding: 10px 10px 10px 40px;
+    z-index: 9;
   }
 
   .floorBtn:hover {

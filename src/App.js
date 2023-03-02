@@ -48,6 +48,8 @@ function App() {
               setScreen={setScreen}
               pages={pages}
               movePage={movePage}
+              project={project}
+              setProject={setProject}
             />
           }
         />
@@ -74,7 +76,6 @@ function App() {
             path="/portfolio"
             element={<Portfolio screen={screen} setScreen={setScreen} />}
           />
-
           <Route
             path="/project/first"
             element={<FirstProject project={project} setProject={setProject} />}
