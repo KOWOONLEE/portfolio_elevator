@@ -1,10 +1,9 @@
 import Space from "../components/Space";
 import styled from "styled-components";
 
-const Resume = ({ screen, setScreen }) => {
+const Resume = () => {
   return (
     <StyledResume>
-      <Space screen={screen} setScreen={setScreen}></Space>
       <section id="resume" className="resumeSection">
         <div className="paddingMargin">
           <p style={{ fontSize: "1.8em", lineHeight: "1vh" }}>
@@ -48,8 +47,8 @@ const StyledResume = styled.div`
   .resumeSection {
     display: flex;
     position: absolute;
-    top: 26vh;
-    left: 17vw;
+    top: 8vh;
+    left: 10vw;
     width: 67%;
     height: 65vh;
     color: white;
@@ -59,12 +58,11 @@ const StyledResume = styled.div`
   }
   .resumetitle {
     display: flex;
-    width: 100%;
+    width: 90%;
+    margin-left: 3vw;
   }
   .resumediv {
     width: 25vw;
-    margin-right: 20px;
-    margin-left: 20px;
 
     h3 {
       width: 40%;

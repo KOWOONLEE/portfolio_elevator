@@ -1,12 +1,9 @@
-import Space from "../components/Space";
 import styled from "styled-components";
-import Contact from "../components/Contact";
 import { theme } from "../color";
 
-const About = ({ screen, setScreen }) => {
+const About = () => {
   return (
     <StyledAbout>
-      <Space screen={screen} setScreen={setScreen}></Space>
       <div className="aboutWrap">
         <div className="aboutLeft">
           <h1>Front-end Developer</h1>
@@ -39,11 +36,6 @@ const About = ({ screen, setScreen }) => {
             </li>
           </ul>
         </div>
-        <div className="aboutRight">
-          <div className="aboutRightWrap">
-            <Contact />
-          </div>
-        </div>
       </div>
     </StyledAbout>
   );
@@ -54,15 +46,17 @@ const StyledAbout = styled.div`
   .aboutWrap {
     display: flex;
     position: absolute;
-    top: 26vh;
-    left: 16vw;
-    width: 67%;
+    top: 6vh;
+    left: 5vw;
+    width: 80%;
     height: 65vh;
     color: white;
     z-index: 99;
+    align-items: center;
+    justify-content: center;
   }
   .aboutLeft {
-    width: 65%;
+    width: 100%;
     margin-top: 25px;
     p {
       font-size: 1em;
@@ -70,7 +64,7 @@ const StyledAbout = styled.div`
   }
   .aboutRight {
     display: flex;
-    width: 35%;
+    width: 100%;
     margin: 0 auto;
   }
   .aboutRightWrap {

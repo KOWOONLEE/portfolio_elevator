@@ -13,6 +13,7 @@ import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import Test from "../components/Test";
 import Space from "../components/Space";
+import Contact from "./Contact";
 
 const Main = ({ screen, setScreen, pages, movePage, project, setProject }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -44,6 +45,11 @@ const Main = ({ screen, setScreen, pages, movePage, project, setProject }) => {
         </div>
         <div className="eleDoor">
           <Space />
+          {/* <About /> */}
+          {/* <Contact /> */}
+          {/* <Skills /> */}
+          {/* <Resume /> */}
+          <Portfolio />
           <div className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}>
             <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
           </div>

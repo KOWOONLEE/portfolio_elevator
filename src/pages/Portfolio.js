@@ -7,11 +7,10 @@ import fourthImg from "../assets/images/project/4th_main.png";
 import { useNavigate } from "react-router-dom";
 import projectData from "../assets/data/project.json";
 
-const Portfolio = ({ screen, setScreen }) => {
+const Portfolio = () => {
   const navigate = useNavigate();
   return (
     <StyledPortfolio>
-      <Space screen={screen} setScreen={setScreen}></Space>
       <section id="portfolio" className="portfolioSection">
         <div className="explain">
           <div className="paddingMargin">
@@ -149,15 +148,14 @@ const StyledPortfolio = styled.div`
   .portfolioSection {
     display: flex;
     position: absolute;
-    top: 28vh;
-    left: 16vw;
-    width: 67%;
-    height: 62vh;
+    top: 8vh;
+    left: 5vw;
+    width: 80%;
+    height: 65vh;
     color: white;
     z-index: 99;
     align-items: center;
     justify-content: center;
-    vertical-align: top;
     overflow-y: scroll;
   }
 

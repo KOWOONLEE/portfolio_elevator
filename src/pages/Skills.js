@@ -9,10 +9,9 @@ import notionIcon from "../assets/images/icons/notion_icon.png";
 import githubIcon from "../assets/images/icons/github_icon.jpeg";
 import slackIcon from "../assets/images/icons/slack_icon.png";
 
-const Skills = ({ screen, setScreen }) => {
+const Skills = () => {
   return (
     <StyledSkills>
-      <Space screen={screen} setScreen={setScreen}></Space>
       <section id="skills" className="skillsSection">
         <div className="paddingMargin">
           <p
@@ -62,8 +61,8 @@ const StyledSkills = styled.div`
   .skillsSection {
     display: flex;
     position: absolute;
-    top: 26vh;
-    left: 17vw;
+    top: 8vh;
+    left: 10vw;
     width: 67%;
     height: 65vh;
     color: white;
@@ -75,11 +74,10 @@ const StyledSkills = styled.div`
     width: 100%;
     height: 15vh;
     align-items: center;
-    margin: auto;
     text-align: center;
   }
   th {
-    font-size: 2em;
+    font-size: 1.8em;
     word-break: keep-all;
   }
 
