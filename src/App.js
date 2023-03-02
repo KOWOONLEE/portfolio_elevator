@@ -3,10 +3,6 @@ import "./App.css";
 import { useState, useRef } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Main from "./pages/Main";
-import About from "./pages/About";
-import Skills from "./pages/Skills";
-import Resume from "./pages/Resume";
-import Portfolio from "./pages/Portfolio";
 import ProjectData from "./assets/data/project.json";
 import FirstProject from "./pages/projects/FirstProject";
 import SecondProject from "./pages/projects/SecondProject";
@@ -42,21 +38,12 @@ function App() {
         <Route
           exact={true}
           path="/"
-          element={
-            <Main
-              screen={screen}
-              setScreen={setScreen}
-              pages={pages}
-              movePage={movePage}
-              project={project}
-              setProject={setProject}
-            />
-          }
+          element={<Main screen={screen} setScreen={setScreen} />}
         />
       </Routes>
       <div ref={wrapRef} className="wrap loaded">
         <Routes>
-          <Route
+          {/* <Route
             exact={true}
             path="/about"
             element={<About screen={screen} setScreen={setScreen} />}
@@ -75,7 +62,7 @@ function App() {
             exact={true}
             path="/portfolio"
             element={<Portfolio screen={screen} setScreen={setScreen} />}
-          />
+          /> */}
           <Route
             path="/project/first"
             element={<FirstProject project={project} setProject={setProject} />}

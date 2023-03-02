@@ -3,80 +3,151 @@ import { useNavigate } from "react-router-dom";
 import { theme } from "./../color";
 import styled from "styled-components";
 import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 const Nav = ({
   eleActive,
   setEleActive,
   screen,
   setScreen,
-  eleShake,
-  setEleShake,
+  aboutPage,
+  setAboutPage,
+  skillsPage,
+  setSkillsPage,
+  contactPage,
+  setContactPage,
+  resumePage,
+  setResumePage,
+  portfolioPage,
+  setPortfolioPage,
 }) => {
   const navigate = useNavigate();
+
+  const buttonActive = (e) => {
+    setScreen(e.target.textContent);
+    setTimeout(() => {
+      setEleActive(true);
+    }, 2000);
+  };
+  const handleAbout = (e) => {
+    setAboutPage(true);
+    setSkillsPage(false);
+    setContactPage(false);
+    setResumePage(false);
+    setPortfolioPage(false);
+  };
+  const handleContact = (e) => {
+    setAboutPage(false);
+    setSkillsPage(false);
+    setContactPage(true);
+    setResumePage(false);
+    setPortfolioPage(false);
+  };
+  const handleSkills = (e) => {
+    setAboutPage(false);
+    setSkillsPage(true);
+    setContactPage(false);
+    setResumePage(false);
+    setPortfolioPage(false);
+  };
+  const handleResume = (e) => {
+    setAboutPage(false);
+    setSkillsPage(false);
+    setContactPage(false);
+    setResumePage(true);
+    setPortfolioPage(false);
+  };
+  const handlePortfolio = (e) => {
+    setAboutPage(false);
+    setSkillsPage(false);
+    setContactPage(false);
+    setResumePage(false);
+    setPortfolioPage(true);
+  };
+
   const openHandleClick = () => {
     setEleActive(true);
   };
   const closeHandleClick = () => {
     setEleActive(false);
   };
-  const moveAbout = (e) => {
-    e.preventDefault();
-    setScreen(e.target.textContent);
-    setEleShake(true);
-    setTimeout(() => {
-      setEleActive(true);
-    }, 2000);
-    setTimeout(() => {
-      navigate("/about");
-    }, 5000);
-  };
-  const moveSkills = (e) => {
-    e.preventDefault();
-    setScreen(e.target.textContent);
-    setEleShake(true);
-    setTimeout(() => {
-      setEleActive(true);
-    }, 2000);
-    setTimeout(() => {
-      navigate("/skills");
-    }, 5000);
-  };
+  // const moveAbout = (e) => {
+  //   e.preventDefault();
+  //   setScreen(e.target.textContent);
+  //   setEleShake(true);
+  //   setTimeout(() => {
+  //     setEleActive(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     navigate("/about");
+  //   }, 5000);
+  // };
+  // const moveSkills = (e) => {
+  //   e.preventDefault();
+  //   setScreen(e.target.textContent);
+  //   setEleShake(true);
+  //   setTimeout(() => {
+  //     setEleActive(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     navigate("/skills");
+  //   }, 5000);
+  // };
 
-  const moveResume = (e) => {
-    e.preventDefault();
-    setScreen(e.target.textContent);
-    setEleShake(true);
-    setTimeout(() => {
-      setEleActive(true);
-    }, 2000);
-    setTimeout(() => {
-      navigate("/resume");
-    }, 5000);
-  };
+  // const moveResume = (e) => {
+  //   e.preventDefault();
+  //   setScreen(e.target.textContent);
+  //   setEleShake(true);
+  //   setTimeout(() => {
+  //     setEleActive(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     navigate("/resume");
+  //   }, 5000);
+  // };
 
-  const movePortfolio = (e) => {
-    e.preventDefault();
-    setScreen(e.target.textContent);
-    setEleShake(true);
-    setTimeout(() => {
-      setEleActive(true);
-    }, 2000);
-    setTimeout(() => {
-      navigate("/portfolio");
-    }, 5000);
-  };
+  // const movePortfolio = (e) => {
+  //   e.preventDefault();
+  //   setScreen(e.target.textContent);
+  //   setEleShake(true);
+  //   setTimeout(() => {
+  //     setEleActive(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     navigate("/portfolio");
+  //   }, 5000);
+  // };
 
   const nameRef = useRef();
 
   return (
     <>
       <StyledNav>
+        <div className="floorBtn" value="contact">
+          <span className="numberBtn">
+            <span className="number">5</span>
+          </span>
+          <span
+            className="btnDetail"
+            onClick={(e) => {
+              handleContact();
+              buttonActive(e);
+            }}
+          >
+            Contact
+          </span>
+        </div>
         <div className="floorBtn" ref={nameRef}>
           <span className="numberBtn">
             <span className="number">4</span>
           </span>
-          <span className="btnDetail" onClick={movePortfolio}>
+          <span
+            className="btnDetail"
+            onClick={(e) => {
+              handlePortfolio();
+              buttonActive(e);
+            }}
+          >
             Portfolio
           </span>
         </div>
@@ -84,7 +155,13 @@ const Nav = ({
           <span className="numberBtn">
             <span className="number">3</span>
           </span>
-          <span className="btnDetail" onClick={moveResume}>
+          <span
+            className="btnDetail"
+            onClick={(e) => {
+              handleResume();
+              buttonActive(e);
+            }}
+          >
             Resume
           </span>
         </div>
@@ -92,7 +169,13 @@ const Nav = ({
           <span className="numberBtn">
             <span className="number">2</span>
           </span>
-          <span className="btnDetail" onClick={moveSkills}>
+          <span
+            className="btnDetail"
+            onClick={(e) => {
+              handleSkills();
+              buttonActive(e);
+            }}
+          >
             Skills
           </span>
         </div>
@@ -100,7 +183,13 @@ const Nav = ({
           <span className="numberBtn">
             <span className="number">1</span>
           </span>
-          <span className="btnDetail" onClick={moveAbout}>
+          <span
+            className="btnDetail"
+            onClick={(e) => {
+              handleAbout();
+              buttonActive(e);
+            }}
+          >
             About
           </span>
         </div>
@@ -134,20 +223,34 @@ const StyledNav = styled.div`
     height: 4vh;
     align-items: center;
     padding: 10px 10px 10px 40px;
-    z-index: 9;
   }
 
   .floorBtn:hover {
     span {
       cursor: pointer;
-      color: ${theme.hover};
+      color: black;
+    }
+  }
+  .floorBtn:active {
+    span {
+      animation: clickButton 0.3s;
+
+      @keyframes clickButton {
+        0% {
+        }
+        100% {
+          margin-left: 5px;
+          margin-top: 5px;
+          box-shadow: none;
+        }
+      }
     }
   }
   .numberBtn {
     display: flex;
     width: 30px;
     height: 30px;
-    color: ${theme.elebutton};
+    color: grey;
     background-color: #d9d3d3;
     font-size: 1.1em;
     font-weight: 800;
@@ -187,7 +290,6 @@ const StyledNav = styled.div`
     size: 1.1em;
     padding: 3px;
     transform: rotate(90deg);
-
     margin-right: 10px;
     margin-left: 10px;
 
