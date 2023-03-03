@@ -9,6 +9,10 @@ const ProjectSpace = () => {
   const [projectMouseHover, setProjectMouseHover] = useState("");
   const navigate = useNavigate();
 
+  const goToPortfolio = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="spaceBackground">
@@ -28,9 +32,7 @@ const ProjectSpace = () => {
           onMouseLeave={() => {
             setProjectMouseHover(false);
           }}
-          onClick={() => {
-            navigate("/portfolio");
-          }}
+          onClick={goToPortfolio}
         >
           <SiCodacy />
           <div className="listButton">

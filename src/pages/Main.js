@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import { theme } from "../color";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import eleImg from "../assets/images/elevator_frame.jpg";
 import eleDoorOne from "../assets/images/door.jpg";
 import eleButton from "../assets/images/elebutton.jpeg";
@@ -11,6 +11,8 @@ import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import Space from "../components/Space";
 import Contact from "./Contact";
+import { AiOutlineClose } from "react-icons/ai";
+import { BsList } from "react-icons/bs";
 
 const Main = ({ screen, setScreen }) => {
   const [eleActive, setEleActive] = useState(false);
@@ -19,6 +21,11 @@ const Main = ({ screen, setScreen }) => {
   const [contactPage, setContactPage] = useState(false);
   const [resumePage, setResumePage] = useState(false);
   const [portfolioPage, setPortfolioPage] = useState(false);
+  const wrapRef = useRef(null);
+  const [mobileNav, setMobileNav] = useState(false);
+  const handleMobile = () => {
+    setMobileNav(!mobileNav);
+  };
 
   useEffect(() => {
     const screenDisplay = (e) => {
@@ -32,51 +39,82 @@ const Main = ({ screen, setScreen }) => {
   return (
     <>
       <StyledMain>
-        <div className="eleWrap">
-          <div className="eleFrame">
-            <img className="eleFrameImg" src={eleImg} alt="img" />
-            <div className="eleDisplayWrap">
-              <div className="eleDisplay">
-                <div className="displayWord">
-                  <p className="word">{screen}</p>
+        <div className="spaceBackground">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          <div className="backgroudWrap">
+            <div className="eleWrap">
+              <div className="eleFrame">
+                <img className="eleFrameImg" src={eleImg} alt="img" />
+                <div className="eleDisplayWrap">
+                  <div className="eleDisplay">
+                    <div className="displayWord">
+                      <p className="word">{screen}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="eleDoor">
-          <Space />
-          {aboutPage ? <About /> : ""}
-          {skillsPage ? <Skills /> : ""}
-          {resumePage ? <Resume /> : ""}
-          {portfolioPage ? <Portfolio /> : ""}
-          {contactPage ? <Contact /> : ""}
-          <div className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}>
-            <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
-          </div>
-          <div className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}>
-            <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
-          </div>
-        </div>
-        <div className="eleButttonWrap">
-          <div className="eleButton">
-            <img src={eleButton} alt="elebuttonImg" />
-            <Nav
-              eleActive={eleActive}
-              setEleActive={setEleActive}
-              screen={screen}
-              setScreen={setScreen}
-              aboutPage={aboutPage}
-              setAboutPage={setAboutPage}
-              skillsPage={skillsPage}
-              setSkillsPage={setSkillsPage}
-              contactPage={contactPage}
-              setContactPage={setContactPage}
-              resumePage={resumePage}
-              setResumePage={setResumePage}
-              portfolioPage={portfolioPage}
-              setPortfolioPage={setPortfolioPage}
-            />
+            <div className="eleDoor">
+              <Space />
+              {aboutPage ? <About /> : ""}
+              {skillsPage ? <Skills /> : ""}
+              {resumePage ? <Resume /> : ""}
+              {portfolioPage ? <Portfolio /> : ""}
+              {contactPage ? <Contact /> : ""}
+              <div className={eleActive ? "eleDoorLeftActive" : "eleDoorLeft"}>
+                <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
+              </div>
+              <div
+                className={eleActive ? "eleDoorRightActive" : "eleDoorRight"}
+              >
+                <img className="eleDoorImg" src={eleDoorOne} alt="eledoor" />
+              </div>
+            </div>
+            <div className="eleButttonWrap">
+              <div className="eleButton">
+                <img src={eleButton} alt="elebuttonImg" />
+                <Nav
+                  eleActive={eleActive}
+                  setEleActive={setEleActive}
+                  screen={screen}
+                  setScreen={setScreen}
+                  aboutPage={aboutPage}
+                  setAboutPage={setAboutPage}
+                  skillsPage={skillsPage}
+                  setSkillsPage={setSkillsPage}
+                  contactPage={contactPage}
+                  setContactPage={setContactPage}
+                  resumePage={resumePage}
+                  setResumePage={setResumePage}
+                  portfolioPage={portfolioPage}
+                  setPortfolioPage={setPortfolioPage}
+                />
+              </div>
+            </div>
+            <StyledNavbarMobile>
+              <div onClick={handleMobile} className="navButton">
+                {!mobileNav ? (
+                  <i className="icon">
+                    <BsList />
+                  </i>
+                ) : (
+                  <i className="icon">
+                    <AiOutlineClose />
+                  </i>
+                )}
+              </div>
+              {mobileNav ? (
+                <div className="mobileNavWrap">
+                  <div className="navWrap">
+                    <section className="menuBar"></section>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+            </StyledNavbarMobile>
           </div>
         </div>
       </StyledMain>
@@ -92,6 +130,11 @@ const StyledMain = styled.div`
   background-color: ${theme.bg};
   align-items: center;
 
+  .backgroudWrap {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
   .eleWrap {
     display: flex;
     height: 100vh;
@@ -99,12 +142,12 @@ const StyledMain = styled.div`
   }
   .eleFrame {
     width: 75vw;
-    height: 95vh;
+    height: 93vh;
     margin: 2vw;
   }
   .eleFrameImg {
     width: 75vw;
-    height: 94vh;
+    height: 93vh;
     border: 1px solid black;
     z-index: 3;
   }
@@ -193,7 +236,7 @@ const StyledMain = styled.div`
     display: flex;
     position: absolute;
     width: 58.8%;
-    height: 79%;
+    height: 78%;
     top: 14vh;
     left: 10.3vw;
     background-color: pink;
@@ -305,5 +348,115 @@ const StyledMain = styled.div`
       border-radius: 10px;
       border: 1px solid black;
     }
+  }
+  @media screen and (max-width: 768px) {
+    .eleButttonWrap {
+      display: none;
+    }
+  }
+`;
+
+const StyledNavbarMobile = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    width: 90%;
+    z-index: 999;
+    justify-content: right;
+
+    .navButton {
+      display: flex;
+      bottom: 15px;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      width: 40px;
+      height: 40px;
+      border: 1px solid b;
+      cursor: pointer;
+    }
+    .icon {
+      font-size: 28px;
+      color: black;
+      line-height: 0;
+    }
+  }
+
+  .mobileNavWrap {
+    animation: fadeInLeft 1s;
+
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+
+    display: inline-block;
+    position: fixed;
+    width: 25vw;
+    height: 50%;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+
+  .profileImg {
+    width: 40%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 50px 0 20px 0;
+  }
+  h2 {
+    font-size: 1.9em;
+  }
+
+  .menuBar {
+    width: 80vw;
+    font-size: 1em;
+    line-height: 1.9em;
+    text-align: left;
+    margin-left: 3em;
+
+    li {
+      list-style: none;
+      line-height: 2.5em;
+    }
+
+    a {
+      text-decoration: none;
+      color: #aba6a6;
+    }
+    a.active {
+      font-weight: bold;
+      span {
+        color: pink;
+      }
+      i {
+        color: #149ddd;
+      }
+    }
+
+    a:hover {
+      cursor: pointer;
+      font-size: 1.2em;
+      span {
+        color: white;
+      }
+      i {
+        color: #149ddd;
+      }
+    }
+  }
+  .typingEffect {
+    color: #149ddd;
   }
 `;

@@ -69,6 +69,17 @@ const StyledSkills = styled.div`
     z-index: 99;
     align-items: center;
     justify-content: center;
+    animation: fadeInUp 1s;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
   }
   table {
     width: 100%;

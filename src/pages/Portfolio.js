@@ -1,4 +1,3 @@
-import Space from "../components/Space";
 import styled from "styled-components";
 import firstImg from "../assets/images/project/first/first_main.png";
 import secondImg from "../assets/images/second_main.png";
@@ -117,25 +116,6 @@ const Portfolio = () => {
                 {projectData[3].projectRoll}
               </p>
             </div>
-
-            {/* {projectData.map((item, idx) => (
-                <div
-                  className="portfolioWrap"
-                  key="item"
-                  onClick={() => {
-                    navigate(`/project/${item.id}`);
-                  }}
-                > */}
-            {/* <div className="portfolioWrap" value="item" key="id"> */}
-            {/* <img src={item.projectImg} alt="project" />
-                  <h2>{item.projectName}</h2>
-                  <p className="projectSub">{item.projectTitle}</p>
-                  <hr />
-                  <p>프로젝트 기술 : {item.projectSkill}</p>
-                  <p>사이트 소개 : {item.projectIntro}</p>
-                  <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
-                </div>
-              ))} */}
           </div>
         </div>
       </section>
@@ -157,6 +137,17 @@ const StyledPortfolio = styled.div`
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
+    animation: fadeInUp 1s;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
   }
 
   /* 아래의 모든 코드는 영역::코드로 사용 */

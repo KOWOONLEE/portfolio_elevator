@@ -51,7 +51,7 @@ const StyledSpace = styled.div`
     position: absolute;
     width: 85%;
     height: 67vh;
-    top: 6vh;
+    top: 8vh;
     left: 4vw;
     background-color: black;
     border-radius: 50px;
