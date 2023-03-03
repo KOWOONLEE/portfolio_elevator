@@ -1,4 +1,4 @@
-.spaceBackground {
+.projectSpaceBackground {
   width: 100%;
   height: 100vh;
   background: #000000;
@@ -591,6 +591,8 @@
   margin: auto;
   filter: blur(10px);
   -webkit-filter: blur(10px);
+  @media screen and (max-width: 768px) {
+  }
 }
 .projectTitle {
   display: flex;

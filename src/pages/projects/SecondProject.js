@@ -171,6 +171,10 @@ const StyledSecondProject = styled.div`
     font-size: 2em;
     font-weight: 600;
     letter-spacing: 2px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.3em;
+    }
   }
   .secondProjectWrap {
     display: flex;
@@ -187,6 +191,11 @@ const StyledSecondProject = styled.div`
     overflow-y: scroll;
     padding-top: 10vh;
     /* background-color: black; */
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      padding-top: 0vh;
+    }
   }
   .secondProjectWrap::-webkit-scrollbar {
     width: 10px; /* 스크롤바의 너비 */
@@ -281,14 +290,17 @@ const StyledSecondProject = styled.div`
     color: #38b2ea;
   }
   @media screen and (max-width: 768px) {
-    .contentWrap {
-      display: block;
-      align-items: center;
+    .title {
+      @media screen and (max-width: 768px) {
+        font-size: 1.3em;
+      }
     }
     .slideImg {
       display: block;
       width: 90%;
       align-items: center;
+      margin-right: 0;
+      padding: 20px;
     }
     .slideContent {
       display: block;
@@ -298,6 +310,7 @@ const StyledSecondProject = styled.div`
     .slideDetail {
       height: 90vh;
       margin-bottom: 50px;
+      margin-top: 40vh;
     }
     .slidelist {
       li {

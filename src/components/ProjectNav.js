@@ -48,7 +48,6 @@ const ProjectNav = () => {
             }}
             onClick={() => navigate("/project/first")}
           >
-            {" "}
             first
           </span>
           <span
@@ -146,6 +145,11 @@ export default ProjectNav;
 
 const StyledNav = styled.div`
   letter-spacing: 1px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    width: 100%;
+  }
 
   .projectDetailword {
     cursor: pointer;
