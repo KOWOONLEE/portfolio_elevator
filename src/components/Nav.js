@@ -277,6 +277,7 @@ const StyledNav = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+
     @media screen and (max-width: 768px) {
       width: 25px;
       height: 25px;
@@ -287,7 +288,9 @@ const StyledNav = styled.div`
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
+
     @media screen and (max-width: 768px) {
+      color: white;
       font-size: 1em;
     }
   }

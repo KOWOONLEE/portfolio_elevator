@@ -72,6 +72,13 @@ const StyledAbout = styled.div`
     p {
       font-size: 1em;
     }
+    @media screen and (max-width: 768px) {
+      width: 94%;
+      font-size: 0.9em;
+      p {
+        line-height: 1.1em;
+      }
+    }
   }
   .aboutRight {
     display: flex;
@@ -97,14 +104,25 @@ const StyledAbout = styled.div`
     font-size: 1.5em;
     text-align: left;
 
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
+
     span {
       font-size: 1.1em;
       font-weight: bold;
+
+      @media screen and (max-width: 768px) {
+        font-size: 0.9em;
+      }
     }
     a {
       color: #90e0ef;
       border: none;
       text-decoration-line: none;
+      @media screen and (max-width: 768px) {
+        font-size: 0.9em;
+      }
     }
     a:hover {
       color: ${theme.hover};

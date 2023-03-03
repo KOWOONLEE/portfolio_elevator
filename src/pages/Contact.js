@@ -81,11 +81,21 @@ const StyledContact = styled.div`
         transform: translateZ(0);
       }
     }
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin: 0 auto;
+    }
   }
   .contactLeft {
     width: 35%;
     height: 80%;
     margin-right: 3vw;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      height: 35%;
+      margin: 0 auto;
+    }
   }
   .contactRight {
     display: flex;
@@ -95,6 +105,13 @@ const StyledContact = styled.div`
     border-radius: 20px;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 80%;
+      height: 65%;
+      margin: 0 auto;
+    }
   }
   .leftWrap {
     display: flex;
@@ -123,6 +140,11 @@ const StyledContact = styled.div`
     box-shadow: 0px 0 10px gray;
     text-align: left;
 
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      height: 35vh;
+    }
+
     strong {
       font-size: 1.2em;
       letter-spacing: 1px;
@@ -148,6 +170,10 @@ const StyledContact = styled.div`
   }
   .address {
     margin-top: 15px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 5px;
+    }
   }
 
   .content {

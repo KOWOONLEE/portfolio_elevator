@@ -174,6 +174,9 @@ const StyledMain = styled.div`
     align-items: center;
     vertical-align: center;
     z-index: 1;
+    @media screen and (max-width: 768px) {
+      top: 4vh;
+    }
   }
   .eleDisplay {
     display: flex;
@@ -251,7 +254,11 @@ const StyledMain = styled.div`
     height: 78%;
     top: 14vh;
     left: 10.3vw;
-    background-color: pink;
+
+    @media screen and (max-width: 768px) {
+      top: 12vh;
+      left: 10.7vw;
+    }
   }
   .eleDoorLeft {
     display: flex;
@@ -269,6 +276,7 @@ const StyledMain = styled.div`
         width: 50%;
       }
     }
+
     img {
       display: flex;
       width: 100%;
@@ -399,9 +407,9 @@ const StyledNavbarMobile = styled.div`
   }
 
   .mobileNavWrap {
-    animation: fadeInLeft 1s;
+    animation: fadeInMobile 1s;
 
-    @keyframes fadeInLeft {
+    @keyframes fadeInMobile {
       0% {
         opacity: 0;
         transform: translate3d(-100%, 0, 0);

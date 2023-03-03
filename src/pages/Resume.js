@@ -6,9 +6,7 @@ const Resume = () => {
     <StyledResume>
       <section id="resume" className="resumeSection">
         <div className="paddingMargin">
-          <p style={{ fontSize: "1.8em", lineHeight: "1vh" }}>
-            이력 및 학력에 대한 설명입니다.
-          </p>
+          <p className="cotentTitle">이력 및 학력에 대한 설명입니다.</p>
           <div className="resumetitle">
             <div className="resumediv">
               <h3>Education</h3>
@@ -67,6 +65,17 @@ const StyledResume = styled.div`
       }
     }
   }
+  .cotentTitle {
+    font-size: "1.8em";
+    line-height: "2.8vh";
+    margin-bottom: "50px";
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.2em;
+      line-height: "2vh";
+      margin-bottom: 0;
+    }
+  }
   .resumetitle {
     display: flex;
     width: 90%;
@@ -74,6 +83,10 @@ const StyledResume = styled.div`
   }
   .resumediv {
     width: 25vw;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8em;
+    }
 
     h3 {
       width: 40%;
@@ -84,6 +97,10 @@ const StyledResume = styled.div`
       padding: 5px 10px 5px 10px;
       text-align: center;
       /* text-shadow: 1.5px 0 #000; */
+
+      @media screen and (max-width: 768px) {
+        width: 55%;
+      }
     }
 
     h4 {

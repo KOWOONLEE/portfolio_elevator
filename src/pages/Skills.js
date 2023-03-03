@@ -14,15 +14,7 @@ const Skills = () => {
     <StyledSkills>
       <section id="skills" className="skillsSection">
         <div className="paddingMargin">
-          <p
-            style={{
-              fontSize: "1.8em",
-              lineHeight: "2.8vh",
-              marginBottom: "50px",
-            }}
-          >
-            현재까지 배우고 사용했던 기술입니다.
-          </p>
+          <p className="cotentTitle">현재까지 배우고 사용했던 기술입니다.</p>
           <table>
             <thead>
               <tr>
@@ -58,6 +50,15 @@ const Skills = () => {
 export default Skills;
 
 const StyledSkills = styled.div`
+  .cotentTitle {
+    font-size: "1.8em";
+    line-height: "2.8vh";
+    margin-bottom: "50px";
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.2em;
+    }
+  }
   .skillsSection {
     display: flex;
     position: absolute;
@@ -90,6 +91,10 @@ const StyledSkills = styled.div`
   th {
     font-size: 1.8em;
     word-break: keep-all;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.1em;
+    }
   }
 
   td {

@@ -137,6 +137,7 @@ const StyledPortfolio = styled.div`
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
+    overflow-x: hidden;
     animation: fadeInUp 1s;
     @keyframes fadeInUp {
       0% {
@@ -182,7 +183,6 @@ const StyledPortfolio = styled.div`
     margin: 20px 10px 10px 10px;
     padding: 10px;
     vertical-align: top;
-    /* border-radius: 20px; */
     z-index: 1;
 
     img {
@@ -209,7 +209,7 @@ const StyledPortfolio = styled.div`
       display: block;
     }
     .portfolioWrap {
-      width: 90%;
+      width: 80%;
     }
   }
 `;
