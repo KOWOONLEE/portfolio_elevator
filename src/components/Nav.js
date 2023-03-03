@@ -208,28 +208,6 @@ const Nav = ({
           </i>
         </div>
       </StyledNav>
-      <StyledNavbarMobile>
-        <div onClick={handleMobile} className="navButton">
-          {!mobileNav ? (
-            <i className="icon">
-              <BsList />
-            </i>
-          ) : (
-            <i className="icon">
-              <AiOutlineClose />
-            </i>
-          )}
-        </div>
-        {mobileNav ? (
-          <div className="mobileNavWrap">
-            <div className="navWrap">
-              <section className="menuBar"></section>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
-      </StyledNavbarMobile>
     </>
   );
 };
@@ -246,11 +224,22 @@ const StyledNav = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    display: inline-block;
+    position: absolute;
+    top: 2vh;
+    left: 0;
+  }
+
   .floorBtn {
     display: flex;
     height: 4vh;
     align-items: center;
     padding: 10px 10px 10px 40px;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px 0px 10px 10px;
+    }
   }
 
   .floorBtn:hover {
@@ -288,12 +277,19 @@ const StyledNav = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media screen and (max-width: 768px) {
+      width: 25px;
+      height: 25px;
+    }
   }
   .btnDetail {
     color: ${theme.elebutton};
     font-size: 1.2em;
     font-weight: 600;
     margin-left: 10px;
+    @media screen and (max-width: 768px) {
+      font-size: 1em;
+    }
   }
   .upDownBtn {
     display: flex;
@@ -302,6 +298,10 @@ const StyledNav = styled.div`
     vertical-align: center;
     justify-content: center;
     margin-top: 20px;
+
+    @media screen and (max-width: 768px) {
+      margin-left: 5vw;
+    }
   }
   svg {
     width: 30px;
@@ -325,108 +325,5 @@ const StyledNav = styled.div`
       cursor: pointer;
       fill: #12cc7e;
     }
-  }
-`;
-const StyledNavbarMobile = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    position: fixed;
-    width: 95%;
-    top: 2vh;
-    z-index: 999;
-    justify-content: right;
-
-    .navButton {
-      display: flex;
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      width: 40px;
-      height: 40px;
-      border: 1px solid black;
-      cursor: pointer;
-    }
-    .icon {
-      font-size: 28px;
-      color: black;
-      line-height: 0;
-    }
-  }
-
-  .mobileNavWrap {
-    animation: fadeInLeft 1s;
-
-    @keyframes fadeInLeft {
-      0% {
-        opacity: 0;
-        transform: translate3d(-100%, 0, 0);
-      }
-      to {
-        opacity: 1;
-        transform: translateZ(0);
-      }
-    }
-
-    display: inline-block;
-    position: fixed;
-    width: 25vw;
-    height: 50%;
-    text-align: center;
-    background-color: grey;
-    color: white;
-  }
-
-  .profileImg {
-    width: 40%;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 50px 0 20px 0;
-  }
-  h2 {
-    font-size: 1.9em;
-  }
-
-  .menuBar {
-    width: 80vw;
-    font-size: 1em;
-    line-height: 1.9em;
-    text-align: left;
-    margin-left: 3em;
-
-    li {
-      list-style: none;
-      line-height: 2.5em;
-    }
-
-    a {
-      text-decoration: none;
-      color: #aba6a6;
-    }
-    a.active {
-      font-weight: bold;
-      span {
-        color: pink;
-      }
-      i {
-        color: #149ddd;
-      }
-    }
-
-    a:hover {
-      cursor: pointer;
-      font-size: 1.2em;
-      span {
-        color: white;
-      }
-      i {
-        color: #149ddd;
-      }
-    }
-  }
-  .typingEffect {
-    color: #149ddd;
   }
 `;
