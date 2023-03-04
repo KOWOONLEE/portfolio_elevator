@@ -228,10 +228,10 @@ const StyledNav = styled.div`
     }
     .mobileNavList {
       list-style: none;
-      line-height: 2.6em;
+      line-height: 2em;
       color: white;
-      font-size: 1.1em;
       overflow: hidden;
+      padding: 10px;
 
       li {
         width: 70vw;
@@ -267,14 +267,21 @@ const StyledNav = styled.div`
     .mobileNavWrap {
       display: flex;
       position: fixed;
-      width: 90vw;
-      height: 40vh;
+      width: 45vw;
+      height: 30vh;
+      left: 5vw;
       align-items: center;
       vertical-align: center;
       justify-content: center;
       margin: 0 auto;
       z-index: 9999;
       background-color: #444343;
+      li {
+        display: flex;
+        width: 100%;
+        font-size: 0.9em;
+        padding-left: 0;
+      }
     }
   }
 `;
