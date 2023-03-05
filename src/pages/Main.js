@@ -13,9 +13,11 @@ import Space from "../components/Space";
 import Contact from "./Contact";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsList } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { setPortfolioPage, setEleActive } from "./../store";
 
 const Main = ({ screen, setScreen }) => {
-  const [eleActive, setEleActive] = useState(false);
+  // const [eleActive, setEleActive] = useState(false);
   const [aboutPage, setAboutPage] = useState(false);
   const [skillsPage, setSkillsPage] = useState(false);
   const [contactPage, setContactPage] = useState(false);
@@ -25,6 +27,8 @@ const Main = ({ screen, setScreen }) => {
   const handleMobile = () => {
     setMobileNav(!mobileNav);
   };
+  const { eleActive } = useSelector((state) => state.eleActive);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const screenDisplay = (e) => {

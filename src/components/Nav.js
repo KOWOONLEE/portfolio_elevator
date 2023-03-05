@@ -4,12 +4,13 @@ import { theme } from "./../color";
 import styled from "styled-components";
 import { BsList, BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setPortfolioPage, setEleActive } from "./../store";
 import { useState, useRef } from "react";
 
 const Nav = ({
-  eleActive,
-  setEleActive,
+  // eleActive,
+  // setEleActive,
   screen,
   setScreen,
   aboutPage,
@@ -77,6 +78,7 @@ const Nav = ({
   const closeHandleClick = () => {
     setEleActive(false);
   };
+
   // const moveAbout = (e) => {
   //   e.preventDefault();
   //   setScreen(e.target.textContent);
@@ -125,6 +127,23 @@ const Nav = ({
   // };
 
   const nameRef = useRef();
+
+  //store안에 있는 모든 state의미
+  //const user = useSelector((state)=> {return state.shopUser})
+  //이렇게도 가능
+  //더 줄이기 가능
+  //const user = useSelector((state)=> state.shopUser)
+  //모든 걸 넣지 말기
+
+  const project = useSelector((state) => {
+    return state;
+  });
+
+  const dispatch = useDispatch();
+
+  const handleTest = () => {
+    dispatch(setEleActive());
+  };
 
   return (
     <>
@@ -200,7 +219,8 @@ const Nav = ({
           </span>
         </div>
         <div className="upDownBtn">
-          <i className="icon" onClick={openHandleClick}>
+          {/* <i className="icon" onClick={openHandleClick}>  */}
+          <i className="icon" onClick={handleTest}>
             <BsArrowsExpand />
           </i>
           <i className="icon" onClick={closeHandleClick}>
