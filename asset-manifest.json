@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/KOWOONLEE/portfolio_elevator/static/css/main.2924812d.css",
-    "main.js": "/KOWOONLEE/portfolio_elevator/static/js/main.2ab6ff71.js",
+    "main.js": "/KOWOONLEE/portfolio_elevator/static/js/main.7e631bdb.js",
     "static/js/787.63c1d64e.chunk.js": "/KOWOONLEE/portfolio_elevator/static/js/787.63c1d64e.chunk.js",
     "static/media/4th_main.png": "/KOWOONLEE/portfolio_elevator/static/media/4th_main.a5ae4db08f2d506d1730.png",
     "static/media/4th_login.png": "/KOWOONLEE/portfolio_elevator/static/media/4th_login.41f56269764f264ffe15.png",
@@ -33,11 +33,11 @@
     "static/media/slick.woff": "/KOWOONLEE/portfolio_elevator/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/KOWOONLEE/portfolio_elevator/index.html",
     "main.2924812d.css.map": "/KOWOONLEE/portfolio_elevator/static/css/main.2924812d.css.map",
-    "main.2ab6ff71.js.map": "/KOWOONLEE/portfolio_elevator/static/js/main.2ab6ff71.js.map",
+    "main.7e631bdb.js.map": "/KOWOONLEE/portfolio_elevator/static/js/main.7e631bdb.js.map",
     "787.63c1d64e.chunk.js.map": "/KOWOONLEE/portfolio_elevator/static/js/787.63c1d64e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2924812d.css",
-    "static/js/main.2ab6ff71.js"
+    "static/js/main.7e631bdb.js"
   ]
 }
