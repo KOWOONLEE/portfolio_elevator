@@ -20,12 +20,12 @@ const Main = ({ screen, setScreen }) => {
   const [skillsPage, setSkillsPage] = useState(false);
   const [contactPage, setContactPage] = useState(false);
   const [resumePage, setResumePage] = useState(false);
-  const [portfolioPage, setPortfolioPage] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const handleMobile = () => {
     setMobileNav(!mobileNav);
   };
   const { eleActive } = useSelector((state) => state.eleActive);
+  const { portfolioPage } = useSelector((state) => state.portfolioPage);
 
   useEffect(() => {
     const screenDisplay = (e) => {
@@ -86,8 +86,6 @@ const Main = ({ screen, setScreen }) => {
                   setContactPage={setContactPage}
                   resumePage={resumePage}
                   setResumePage={setResumePage}
-                  portfolioPage={portfolioPage}
-                  setPortfolioPage={setPortfolioPage}
                 />
               </div>
             </div>
@@ -116,8 +114,6 @@ const Main = ({ screen, setScreen }) => {
                     setContactPage={setContactPage}
                     resumePage={resumePage}
                     setResumePage={setResumePage}
-                    portfolioPage={portfolioPage}
-                    setPortfolioPage={setPortfolioPage}
                   />
                 </div>
               ) : (

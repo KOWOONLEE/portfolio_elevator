@@ -1,14 +1,6 @@
 import "./Space.scss";
 import styled from "styled-components";
-import { SiCodacy } from "react-icons/si";
-import { MdOutlineSensorDoor } from "react-icons/md";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 const Space = ({ screen, setScreen }) => {
-  const [mouseHover, setMouseHover] = useState("");
-  const navigate = useNavigate();
-
   return (
     <StyledSpace>
       <div className="spaceBackground">

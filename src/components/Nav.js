@@ -2,8 +2,13 @@ import * as React from "react";
 import { theme } from "./../color";
 import styled from "styled-components";
 import { BsArrowsExpand, BsArrowsCollapse } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
-import { setPortfolioPage, setOpen, setClose } from "./../store";
+import { useDispatch } from "react-redux";
+import {
+  portfolioPageOpen,
+  portfolioPageClose,
+  setOpen,
+  setClose,
+} from "./../store";
 
 const Nav = ({
   screen,
@@ -16,8 +21,6 @@ const Nav = ({
   setContactPage,
   resumePage,
   setResumePage,
-  portfolioPage,
-  setPortfolioPage,
 }) => {
   const dispatch = useDispatch();
 
@@ -39,35 +42,35 @@ const Nav = ({
     setSkillsPage(false);
     setContactPage(false);
     setResumePage(false);
-    setPortfolioPage(false);
+    dispatch(portfolioPageClose());
   };
   const handleContact = (e) => {
     setAboutPage(false);
     setSkillsPage(false);
     setContactPage(true);
     setResumePage(false);
-    setPortfolioPage(false);
+    dispatch(portfolioPageClose());
   };
   const handleSkills = (e) => {
     setAboutPage(false);
     setSkillsPage(true);
     setContactPage(false);
     setResumePage(false);
-    setPortfolioPage(false);
+    dispatch(portfolioPageClose());
   };
   const handleResume = (e) => {
     setAboutPage(false);
     setSkillsPage(false);
     setContactPage(false);
     setResumePage(true);
-    setPortfolioPage(false);
+    dispatch(portfolioPageClose());
   };
   const handlePortfolio = (e) => {
     setAboutPage(false);
     setSkillsPage(false);
     setContactPage(false);
     setResumePage(false);
-    setPortfolioPage(true);
+    dispatch(portfolioPageOpen());
   };
 
   return (

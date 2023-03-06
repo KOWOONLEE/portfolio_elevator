@@ -1,4 +1,3 @@
-import Space from "../components/Space";
 import styled from "styled-components";
 
 const Resume = () => {
@@ -66,13 +65,13 @@ const StyledResume = styled.div`
     }
   }
   .cotentTitle {
-    font-size: "1.8em";
-    line-height: "2.8vh";
-    margin-bottom: "50px";
+    font-size: 1.8em;
+    line-height: 2.5vh;
+    margin-bottom: 20px;
 
     @media screen and (max-width: 768px) {
       font-size: 1.2em;
-      line-height: "2vh";
+      line-height: 2vh;
       margin-bottom: 0;
     }
   }

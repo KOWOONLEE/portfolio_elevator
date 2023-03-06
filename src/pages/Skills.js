@@ -1,4 +1,3 @@
-import Space from "../components/Space";
 import styled from "styled-components";
 import htmlIcon from "../assets/images/icons/html-5.png";
 import cssIcon from "../assets/images/icons/css.png";
@@ -51,9 +50,9 @@ export default Skills;
 
 const StyledSkills = styled.div`
   .cotentTitle {
-    font-size: "1.8em";
-    line-height: "2.8vh";
-    margin-bottom: "50px";
+    font-size: 1.8em;
+    line-height: 2.8vh;
+    margin-bottom: 50px;
 
     @media screen and (max-width: 768px) {
       font-size: 1.2em;
