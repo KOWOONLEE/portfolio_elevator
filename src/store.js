@@ -27,11 +27,17 @@ const eleActive = createSlice({
     setEleActive(state, action) {
       state.eleActive = true;
     },
+    setOpen(state, action) {
+      state.eleActive = true;
+    },
+    setClose(state, action) {
+      state.eleActive = false;
+    },
   },
 });
 
 export let { setPortfolioPage } = portfolioProject.actions;
-export let { setEleActive } = eleActive.actions;
+export let { setEleActive, setOpen, setClose } = eleActive.actions;
 
 export default configureStore({
   //위에 등록한거 가져와야함.
