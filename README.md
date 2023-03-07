@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# **프로젝트 소개 - react로 반응형 portfolio 사이트 만들기**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 배포 주소
+### 📒 https://kowoonlee.github.io/portfolio_elevator
+<br>
+<br>
 
-## Available Scripts
+## 프로젝트 설명
 
-In the project directory, you can run:
+React 를 사용해 포트폴리오 사이트를 제작했습니다.
+엘리베이터를 모티브로 버튼을 클릭할 때마다 해당 포폴 내용으로 이동합니다.
+Portfolio페이지에서는 프로젝트 카드를 클릭하면 프로젝트 관련 detail페이지로 이동합니다.
 
-### `npm start`
+<br>
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **언어**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> JavaScript
+> React.js
 
-### `npm test`
+## **라이브러리**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> styled-components
 
-### `npm run build`
+> react-dom
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> react-router-dom
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> react-icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> react-slick
 
-### `npm run eject`
+> react-player
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> reduxjs/toolkit
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 프로젝트 설치 및 실행 방법
 
-## Learn More
+1. Node.js를 설치해주세요.
+```
+https://nodejs.org/
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. 레포지토리를 클론 후 폴더로 이동 해주세요.
+```
+https://github.com/KOWOONLEE/portfolio_elevator.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. dependencies를 설치해주세요.
+```
+npm install
+```
 
-### Code Splitting
+4. 명령어를 통해 server를 실행해주세요.
+```
+npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
+<br>
 
-### Analyzing the Bundle Size
+## 기능 및 메뉴 소개
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
 
-### Making a Progressive Web App
+### ✅ 메인화면
+엘리베이터 UI로 각 엘리베이터 층 버튼을 클릭할 때마다 해당 내용으로 이동할 수 있습니다.
+포트폴리오의 내용은 저를 소개하는 About, 사용해본 Skills, 이력 및 교육에 관련된 Resume, 프로젝트 경험과 관련된 Portfolio 페이지, 이메일 주소와 github 주소가 나타난 Contact로 나뉘어 있습니다. 
+CSS를 이용하여 배경화면은 별이 움직이는 우주효과를 냈습니다.
+엘리베이터 상단 화면에서 해당 포트폴리오의 title을 슬라이드로 지나가면서 나타냅니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![1 메인화면](https://user-images.githubusercontent.com/108816777/223324567-acc2bdd2-7260-4005-a419-61c04dbae2b3.gif)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
+<br>
 
-### Deployment
+### ✅ 상세 포트폴리오 페이지
+Portfolio카테고리에서 프로젝트 카드 클릭 시 해당 프로젝트 상세 페이지로 이동합니다.
+상세 포폴 사이트는 슬라이드로 이미지 삽입 후 각 메뉴에 대한 설명이 기재되어있으며, 오른쪽에 프로젝트 기간, 인원, 역할, github-repo, 회고록 등 자세한 내용이 기재되어있습니다.
+발표 동영상이 있는 경우에는 react-player이용하여 동영상을 삽입했습니다.
+해당 페이지 navbar에서 first, second 등은 프로젝트 번호이며, 해당 메뉴에 hover시 프로젝트 이름이 나오도록 했습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![2 포트폴리오 페이지](https://user-images.githubusercontent.com/108816777/223325127-bf9989f8-7f0d-4e21-8fb7-7b4c1b725c6b.gif)
 
-### `npm run build` fails to minify
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### ✅ 반응형 제작
+태블릿 가로 사이즈 768px 기준으로 해당 사이즈 이하로 줄어들 경우에 페이지 레이아웃이나 글씨 크기가 변경되도록 반응형으로 구현하였습니다.
+반응형 사이즈일 때 navbar를 아이콘 toggle로 변경하여 재배치하도록 했습니다. 
+
+![3 main mobile](https://user-images.githubusercontent.com/108816777/223326330-6254edf8-ec02-458c-ac09-7de611dd6c5c.gif)
+![4 project main](https://user-images.githubusercontent.com/108816777/223326479-181e8b12-4533-4e9b-9fcc-f6d13c5b2de2.gif)
+
+<br>
+<br>
+
+
+## 작성자 깃허브 및 블로그 계정
+
+- 깃허브 https://github.com/KOWOONLEE
+- 블로그 https://velog.io/@kkk5689
