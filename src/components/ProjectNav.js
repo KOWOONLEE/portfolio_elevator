@@ -97,7 +97,15 @@ const ProjectNav = () => {
           </span>
         </div>
         <div className="sideMenu">
-          <a href="/">Main Page로 이동</a> <span>/ Portfolio Details </span>
+          <span
+            className="gotoMainPage"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Main Page로 이동
+          </span>{" "}
+          <span>/ Portfolio Details </span>
         </div>
       </div>
       {mobileNav ? (
@@ -209,6 +217,14 @@ const StyledNav = styled.div`
       text-decoration: underline;
       cursor: pointer;
     }
+  }
+  .gotoMainPage {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .gotoMainPage:hover {
+    color: #90e0ef;
   }
   .sideMenu {
     font-size: 1.2em;
