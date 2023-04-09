@@ -3,6 +3,7 @@ import firstImg from "../assets/images/project/first/first_main.png";
 import secondImg from "../assets/images/second_main.png";
 import thirdMain from "../assets/images/project/third/3rd_main.png";
 import fourthImg from "../assets/images/project/4th_main.png";
+import fifthImg from "../assets/images/project/fifth/board_main.png";
 import { useNavigate } from "react-router-dom";
 import projectData from "../assets/data/project.json";
 
@@ -24,6 +25,30 @@ const Portfolio = () => {
             </p>
           </div>
           <div className="portfolioContainer">
+            <div
+              className="portfolioWrap"
+              onClick={() => {
+                navigate("/project/fifth");
+              }}
+            >
+              <img className="fifthImg" src={fifthImg} alt="fifthimg" />
+              <h2>{projectData[4].projectName}</h2>
+              <p>{projectData[4].projectTitle}</p>
+              <hr />
+              <p>
+                <strong>프로젝트 기술 : </strong>
+                {projectData[4].projectSkill}
+              </p>
+              <p>
+                <strong>사이트 소개 : </strong>
+                {projectData[4].projectIntro}
+              </p>
+              <p>
+                <strong>프로젝트 내 역할 :</strong>
+                {projectData[4].projectRoll}
+              </p>
+            </div>
+
             <div
               className="portfolioWrap"
               onClick={() => {
@@ -170,11 +195,13 @@ const StyledPortfolio = styled.div`
   }
   .portfolioContainer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-left: 20px;
   }
   .portfolioWrap {
     display: inline-block;
-    width: calc(80% / 4);
+    width: calc(80% / 2);
     height: 100%;
     transition: 0.3s;
     position: relative;

@@ -8,6 +8,7 @@ import FirstProject from "./pages/projects/FirstProject";
 import SecondProject from "./pages/projects/SecondProject";
 import ThirdProject from "./pages/projects/ThirdProject";
 import FourthProject from "./pages/projects/FourthProject";
+import FifthProject from "./pages/projects/FifthProject";
 
 function App() {
   const [screen, setScreen] = useState("");
@@ -36,6 +37,10 @@ function App() {
         <Route
           path="/project/fourth"
           element={<FourthProject project={project} setProject={setProject} />}
+        />
+        <Route
+          path="/project/fifth"
+          element={<FifthProject project={project} setProject={setProject} />}
         />
       </Routes>
     </div>

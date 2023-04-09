@@ -15,6 +15,7 @@ const ProjectNav = () => {
   const [secondHover, setSecondHover] = useState("");
   const [thirdHover, setThirdHover] = useState("");
   const [fourthHover, setFourthHover] = useState("");
+  const [fifthHover, setFifthHover] = useState("");
 
   return (
     <StyledNav>
@@ -83,6 +84,17 @@ const ProjectNav = () => {
           >
             fourth
           </span>
+          <span
+            onMouseEnter={() => {
+              setFifthHover(true);
+            }}
+            onMouseLeave={() => {
+              setFifthHover(false);
+            }}
+            onClick={() => navigate("/project/fifth")}
+          >
+            fifth
+          </span>
         </div>
         <div className="sideMenu">
           <a href="/">Main Page로 이동</a> <span>/ Portfolio Details </span>
@@ -103,6 +115,9 @@ const ProjectNav = () => {
               </li>
               <li onClick={() => navigate("/project/fourth")}>
                 fourth project - 병원 예약 페이지
+              </li>
+              <li onClick={() => navigate("/project/fifth")}>
+                fifth project - 하루일기 - 게시글 등록
               </li>
             </ul>
           </div>
@@ -133,6 +148,13 @@ const ProjectNav = () => {
         {fourthHover ? (
           <div className="first">
             <span> Mini 프로젝트 - 병원예약 프로그램</span>
+          </div>
+        ) : (
+          ""
+        )}
+        {fifthHover ? (
+          <div className="first">
+            <span> 개인 프로젝트 - 하루일기 게시글 등록 페이지 제작</span>
           </div>
         ) : (
           ""
