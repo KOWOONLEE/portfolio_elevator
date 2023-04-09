@@ -290,7 +290,7 @@ const StyledFirstProject = styled.div`
     .slideDetail {
       height: 90vh;
       margin-bottom: 50px;
-      margin-top: 0px;
+      margin-top: 15vh;
     }
     .slidelist {
       li {
